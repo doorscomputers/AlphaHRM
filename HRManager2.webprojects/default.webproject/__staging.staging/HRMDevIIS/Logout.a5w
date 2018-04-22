@@ -1,0 +1,8 @@
+<%A5
+
+L = Context.Security.Logout()
+'R = Context.Response.Redirect("login.a5w")
+a5ws_logoutuser(session,request,response)
+session.reset()
+response.redirect("login.a5w")
+%>

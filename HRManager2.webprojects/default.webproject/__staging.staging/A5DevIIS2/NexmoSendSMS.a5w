@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="Alpha Anywhere HTML Editor Version 12 Build 2684-4438">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title></title>
+</head>
+<body>
+<%a5
+ApiKey = session.NexmoApiKey
+ApiSecret = session.NexmoApiSecret
+
+CallFrom="Alpha HRM"
+
+'Remove after testing...
+session.CallTo="ALPHAHRM"
+
+MsgText = urlencode(session.MsgText)
+CallTo = session.CallTo
+cURLPath = session.cUrlPath
+
+cmd = <<%txt%
+curl "https://rest.nexmo.com/sms/json?api_key=__ApiKey__&api_secret=__ApiSecret__&from=AlphaHRM&to=__CallTo__&text=__MsgText__" --insecure --silent
+%txt%
+
+cmd = strtran(cmd,"__ApiKey__",ApiKey)
+cmd = strtran(cmd,"__ApiSecret__",ApiSecret)
+cmd = strtran(cmd,"__CallFrom__",CallFrom)
+cmd = strtran(cmd,"__CallTo__",CallTo)
+cmd = strtran(cmd,"__MsgText__",MsgText)
+cmd = strtran(cmd,"%","%%")
+
+'Generate unique batch filename
+BatFileName =  session.cURLPath + "\\" + remspecial(api_uuidcreate()) + ".bat"  
+'Create batch file from cmd string
+file.from_string(BatFileName,cmd)
+'Determine current directory
+currdir = dir_get()
+'Change directory to cURL location
+dir_put(cURLPath)
+'Execute cURL command
+sys_shell_wait(BatFileName,.f.)
+'Delete batch file
+'file.remove(BatFileName)
+'Return to starting directory
+dir_put(currdir)
+%>
+
+
+
+</body></html>

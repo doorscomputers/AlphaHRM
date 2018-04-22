@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+<!-- The following lines are only needed if you use the "DIV" option for showing edits/adds. If you're using th DIV option, uncomment the three lines below -->
+<!--
+<script type="text/javascript"> if (typeof(jQuery) != 'function') document.write( unescape('%3Cscript src="jqcalsrc/jquery-1.7.1.js" type="text/javascript"%3E%3C/script%3E') );</script> 
+<script src="jqcalsrc/Plugins/Common.js" type="text/javascript"></script>
+<script src="jqcalsrc/Plugins/jquery.ifrmdailog.js" defer="defer" type="text/javascript"></script>
+-->
+
+<head>
+
+
+<%a5
+Delete tmpl_Jqcal_Mast
+DIM tmpl_Jqcal_Mast as P
+tmpl_Jqcal_Mast = a5w_load_component("Jqcal_Master_Event_Edit_Template_V453") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:Jqcal_Master_Event_Edit_Template_V453)
+
+'Override settings start -----------------------------------------
+tmpl_Jqcal_Mast.override_settings = <<%override_settings%
+	.alias = "Jqcal_Mast"
+_dialogFilename = "Jqcal_Master_Event_Edit_Template_V453"
+	_gridFilename = "Jqcal_Master_Event_Edit_Template_V453"
+%override_settings%
+
+
+a5w_resolveVariablesInOverrideSettings(tmpl_Jqcal_Mast,session,local_variables())
+ 
+'Override settings end -----------------------------------------
+
+delete x_Jqcal_Mast
+dim x_Jqcal_Mast as p
+x_Jqcal_Mast = a5w_run_Component(tmpl_Jqcal_Mast) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:Jqcal_Master_Event_Edit_Template_V453)
+
+?x_Jqcal_Mast.Output.Head.JavaScript
+?x_Jqcal_Mast.Output.Head.CSS_Link
+
+?x_Jqcal_Mast.Output.Head.Title 
+%>
+
+
+
+
+</head>
+
+
+<body class="GrBluePage">
+
+
+
+
+<%a5 ?x_Jqcal_Mast.Output.Body.Dialog2_HTML %>
+
+</body>
+
+</html>
+

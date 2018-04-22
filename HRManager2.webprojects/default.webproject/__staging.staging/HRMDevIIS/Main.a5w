@@ -1,0 +1,258 @@
+<%a5
+
+'Show Demo Server Name
+session.ServerName = ""
+
+if file.exists("c:\Server.txt")
+	f  = file.open("c:\Server.txt",FILE_RO_SHARED)
+	session.ServerName = f.read_line()
+	f.close()
+end if
+
+'Dashboard initial Values
+session.CurrAlertWeek = week(date())
+session.CurrAlertYear = year(date())
+session.CurrDate = Date()
+session.CurrWeekStart = session.CurrDate -(dow(session.CurrDate)-1)
+session.CurrWeekEnd = session.CurrDate + (7 - dow(session.CurrDate))
+'Open connection
+'Required for use on IIS. CurrUser is only available on successful login.
+CurrUser = a5ws_getcurrentuser()
+session.UserId = Context.Security.CurrentUser ' CurrUser
+session.usergroupname = Context.Security.GetUserRoles()
+
+
+'Open connection
+dim cn as sql::connection
+dim args as sql::Arguments
+args.add("CurrUser",CurrUser)
+'args.set("userid",Context.Security.CurrentUser)
+cn.Open("::Name::SQL")
+
+'-- Define sql_query
+	sql_query = "SELECT * from WebUser where userid = :CurrUser"
+'
+	'-- Set Arguments
+	'args.set("userid",Context.Security.CurrentUser)
+	cn.Execute(sql_query,args)	
+	session.CurrCoID = cn.ResultSet.data("CompanyID")
+	session.Fullname = cn.ResultSet.data("FullName")
+	
+	args.add("CompanyID",session.CurrCoID)
+	sqlstr = "select Name as Company from Company where id = :CompanyID"
+	cn.Execute(sqlstr,args)
+	session.CompanyName = cn.ResultSet.data("Company")
+	session.CurrCompanyName = cn.ResultSet.data("Company")
+	'session.CompanyLogo = cn.ResultSet.data("Logo") 
+
+
+	'session.userguid = cn.ResultSet.data("guid")
+	'session.UserId = cn.ResultSet.data("userid")
+	'session.UserId = Context.Security.CurrentUser ' CurrUser
+	'session.usergroupname = Context.Security.GetUserRoles()
+	
+'Get User information
+'sqlstr = "select * from WebUser where Userid = :CurrUser"
+'sqlstr = "select * from websecurity_users where userid = :CurrUser"
+'cn.Execute(sqlstr,args)
+'session.userguid = cn.ResultSet.data("guid")
+'session.UserId = cn.ResultSet.data("userid")
+'session.UserID = CurrUser
+'session.UserId = cn.Resultset.data("ID")
+'args.Add("guid",session.userguid)
+
+'cn.Open("::Name::SQL")
+'sqlstr = "select * from websecurity_members where user_guid = :guid"
+'cn.Execute(sqlstr,args)
+'session.groupguid =  cn.ResultSet.data("group_guid")
+
+'args.Add("groupguid",session.groupguid)
+'cn.Open("::Name::SQL")
+'sqlstr = "select * from websecurity_groups where group_guid = :groupguid"
+'cn.Execute(sqlstr,args)
+'session.usergroupname =  cn.ResultSet.data("group_name")
+
+
+'args.Add("UserID",CurrUser)
+'cn.Open("::Name::SQL")
+'
+''Get User information
+'
+'sqlstr = "select * from WebUser where Userid = :UserID"
+'cn.Execute(sqlstr,args)
+'sqlstr2 = replace_arguments_in_string(sqlstr,args,3)
+'file.from_string("c:\AlphaDebug\Main.txt",sqlstr2)
+
+'session.Fullname = cn.ResultSet.data("FullName")
+'session.CompanyID = cn.ResultSet.data("CompanyID")
+'session.CurrCompanyID = cn.ResultSet.data("CompanyID")
+'session.CurrCompanyIdText = alltrim(str(session.CurrCompanyID))
+
+'args.add("CompanyID",session.CurrCompanyID)
+
+'file.from_string("c:\alphadebug\ComapnyID.txt",alltrim(str(session.CurrCompanyID)))
+
+'sqlstr = "select Name as Company from Company where id = :CompanyID"
+'cn.Execute(sqlstr,args)
+'session.CompanyName = cn.ResultSet.data("Company")
+'session.CurrCompanyName = cn.ResultSet.data("Company")
+'session.CompanyLogo = cn.ResultSet.data("Logo") 
+
+'Get HRCAdmin Status
+'Get Company and CurrCompanyID (for HRCAdmin to select company to work with)
+
+session.UserAssignments = a5ws_get_user_assignments(session.UserId)
+if occurs("HRC Admins",session.UserAssignments)
+	session.HRCAdminFlag = .t.
+else
+	session.HRCAdminFlag = .f.
+end if
+
+file.from_string("c:\AlphaDebug\UserValues.txt", session.UserAssignments + crlf() + iif(session.HRCAdminFlag,"HrcAdmin = True","HRCAdmin = False"))
+
+sqlstr = "select ServerType, Filepath from si where ID = 101"
+cn.Execute(sqlstr) 
+
+session.ServerType = "Production" 'cn.ResultSet.data("ServerType")
+'session.FilePath = "c:\\A5Webroot\\HRM\\DocUpload\" 
+'cn.ResultSet.data("FilePath")
+
+'Go to user's page
+'Send to Index for all user
+
+sqlstr = "select DefaultProbation from Company where id = :CompanyID"
+cn.Execute(sqlstr,args)
+session.DefaultProbation = 30 'cn.ResultSet.data("DefaultProbation")
+
+'Get credentials for SMS operations
+'sqlstr = "select NexmoApiKey, NexmoApiSecret, cUrlPath from si"
+'cn.Execute(sqlstr)
+'session.NexmoApiKey = cn.ResultSet.data("NexmoApiKey")
+'session.NexmoApiSecret = cn.ResultSet.data("NexmoApiSecret")
+'session.cUrlPath = cn.ResultSet.data("cUrlPath")
+
+
+
+
+
+
+
+
+cn.Close()
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''New Code
+	'DIM conn as SQL::Connection
+	'DIM args as sql::arguments
+	'DIM rs as sql::ResultSet
+	'DIM cnstring as C
+	'DIM sql_query as C
+	
+	''-- Define connection string
+	'cnstring="::Name::conn"
+	
+	''-- Attempt to open connection. Report error if unsuccessful.
+	'if .not. conn.open(cnstring) then
+	'	error_generate("DB Conn Error: " + conn.CallResult.text)
+	'end if
+	
+'	'-- Define sql_query
+	'sql_query = "SELECT * from userprofile where userid = :userid"
+	'
+	'-- Set Arguments
+	'args.set("userid",Context.Security.CurrentUser)
+	'
+'	dim userProfilePointer[0] as P
+
+	''-- Execute Query
+'	if conn.ToPropertyArray(sql_query,args,userProfilePointer) then
+		
+'		if userProfilePointer.size() = 0 then
+'			error_generate("User not found in userprofile.")
+'		end if
+'	else
+'		error_generate("DB Error: " + conn.CallResult.text)
+'	end if
+'
+'
+'	session.fk_organization = userProfilePointer[1].fk_organization
+'	session.userProfilePointer = userProfilePointer
+'
+'	'-- Now load up the organization info.
+'
+'	dim organizationPointer[0] as P
+'
+'	sql_query = "SELECT * from organization where id = :fk_organization"
+'
+'	'-- Set Arguments
+'	args.set("fk_organization",session.fk_organization)
+'
+'	'-- Execute Query
+'	if conn.ToPropertyArray(sql_query,args,organizationPointer) then
+'		
+'		if organizationPointer.size() = 0 then
+'			error_generate("User not found in userprofile.")
+'		end if
+'	else
+'		error_generate("DB Error: " + conn.CallResult.text)
+'	end if
+'
+'	session.organization_name = organizationPointer[1].name
+'
+'
+'
+'
+'
+'	
+'
+'	'-- Set the default language by company and future is by user.
+'-- session.__protected__activeLanguage = session.fk_organization
+
+'DIM userid as C
+'userid = Context.Security.CurrentUser
+
+'DIM lastPasswordChange as D
+'DIM numberOfDaysSinceChange as N
+'	cnstring="::Name::conn"
+'	table="userprofile"
+'	result_expression="lastpasswordchange"
+'	filter="userid = '" + Context.Security.CurrentUser + "'"
+'	lastPasswordChange = sql_lookup(cnstring,table,filter,result_expression)
+'
+'
+''-- This code will check how long it has been since the password has been changed.
+''-- Grab the last password date change.
+'
+''lastPasswordChange = Context.Security.GetLastPasswordChangedDate()
+'
+''?"Last Password Change: " + lastPasswordChange + "<br>"
+''?"Number of days: " + (date() - lastPasswordChange)
+''end
+'
+'numberOfDaysSinceChange = date() - lastPasswordChange
+'
+'select
+'	case numberOfDaysSinceChange <= 180
+'		Response.redirect("home.a5w")
+'	case numberOfDaysSinceChange >180 .AND. numberOfDaysSinceChange <= 270
+'		Response.redirect("accountpasswordwarning.a5w")
+'	case numberOfDaysSinceChange > 270
+'		Response.redirect("accountpasswordrevoked.a5w")
+'end select
+'
+'
+'end
+
+error_handler_loginProcessing:
+ 	
+	?"Module: loginProcessing Function: loginprocessing + Line Number: " + error_line_number_get() + " Error: " + error_text_get()
+
+
+''End of New Code
+
+
+
+
+response.redirect("Index.a5w")
+
+
+%>

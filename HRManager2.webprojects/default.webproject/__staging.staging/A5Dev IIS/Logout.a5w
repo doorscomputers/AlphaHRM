@@ -1,0 +1,6 @@
+<%A5
+
+L = Context.Security.Logout()
+R = Context.Response.Redirect("login.a5w")
+
+%>

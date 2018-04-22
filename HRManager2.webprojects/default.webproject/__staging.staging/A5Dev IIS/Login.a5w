@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<%a5
+dim componentAlias as c
+'The componentAlias MUST be UNIQUE for each component on the page.
+'The componentAlias must not have any spaces in the name. Try to keep the componentAlias as short as possible.
+componentAlias = "Login"
+Delete tmpl
+DIM tmpl as P
+tmpl  = a5w_load_component("Login") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:Login)
+'Following code allows you to override settings in the saved component, and specify the component alias (componentName property).
+'Tip: Keep the componentName property short because this name is used in page URLs, and it will help keep the URLs short.
+'Each component on a page must have a unique alias (componentName property).
+tmpl.override_settings = <<%override_settings%
+	componentName = "Login"
+	_gridFilename = "Login"
+%override_settings%
+
+
+a5w_resolveVariablesInOverrideSettings(tmpl,session,local_variables())
+ 
+'=======================================compute the HTML for the Component=======================================
+delete x_out
+dim x_out as p
+x_out = a5w_run_Component(tmpl) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl)
+ 	'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE - Ajax =========================================================
+'=============================================================================================================
+if x_out.RedirectURL <> "" then 
+	response.redirect(x_out.redirectURL)
+	end
+end if 
+?x_out.Output.Head.JavaScript
+?x_out.Output.Head.CSS_Link
+%>
+
+<title>Login</title>
+
+<style type="text/css">
+table.rnd {
+	background-color:#FFF;
+	border-radius: 3px ;
+	-moz-border-radius: 3px ;
+	-webkit-border-radius: 3px ;
+	padding: 2px;
+	-moz-box-shadow: 0px 0px 16px #444;
+	-webkit-box-shadow: 0px 0px 16px #444;
+	box-shadow: 0px 0px 16px #444;
+}
+
+
+body.bg1 
+{
+background-image: url('BG1.png');
+background-color:#003366;
+}
+</style>
+
+</head>
+
+<body class="NDDIBluePage" background="BG1.png" class="bg1" onload="document.getElementById('Userid').focus()">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<table class="rnd" border="0" cellpadding="0" cellspacing="0" style="WIDTH: 700px; HEIGHT: 300px; background-image:url('loginbg.png');" align=center>
+	<tr>
+		<td valign="middle" style="FONT-FAMILY: Verdana; FONT-SIZE: 12pt; FONT-WEIGHT: bold" background="" align=center></td>
+	</tr>
+	<tr>
+		<td background="" align="center" style="padding-top:90px;"><br>&nbsp; 
+		<table>
+		  <tr>
+		    <td style="padding-left:270px;"><%A5 ?x_out.Output.Body.Login_Errors %></td>
+		  </tr>
+		  <tr>
+		    <td style="padding-left:270px;"><%A5 ?x_out.Output.Body.Login_HTML %></td>
+		  </tr>
+		</table><br></td>
+	</tr>
+</table>
+<br>
+</body>
+</html>
+
+
+

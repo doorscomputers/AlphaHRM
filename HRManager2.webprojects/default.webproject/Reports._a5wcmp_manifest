@@ -1,0 +1,10 @@
+A5SaveTimeStamp:20180327163747246
+css:<ProjectStyle>
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\css\A5System\Images\wait.gif}
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\EmployeeProbationList.a5rpt}
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\EmplpyeeMissingData.a5rpt}
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\CompanyDeptMasterList.a5rpt}
+subComponent:RptEmployeeDirectory
+subComponent:RptEmployeeList
+subComponent:RptEmployeeBirthday
+subComponent:RptEmployeeAnniversary

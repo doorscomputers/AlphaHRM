@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+<script type="text/javascript" src="javascript/a5-26144409.js"></script>
+<script type="text/javascript" src="javascript/a5_url.js"></script>
+
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript" src="javascript/A5jQueryWithUI.js"></script>
+
+<script>
+	if(typeof jQuery != 'undefined') jQuery.noConflict();
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/cupertino/jquery-ui.css" >
+
+<script type="text/javascript" language="javascript">
+A5._windowDefaults={title:{tools:{defaults:{'close':{action:'close',name:'close',image:'images/$$window.button.close.png.a5image'}}}}}
+A5.serverSideDateFormat = 'MM/dd/yyyy';
+</script>
+
+<script type="text/javascript">
+// a generic delay before calling a function
+function popupDelay(fn, ms) {
+   var timer;
+   return function() {
+      clearTimeout(timer);
+      timer = setTimeout(fn, ms || 500);
+   }
+};
+
+</script>
+<link rel="stylesheet" type="text/css" href="css/LiveImmigration/style.css">
+<script type="text/javascript" src="css/LiveImmigration/Style.js"></script>
+<style type="text/css">
+<!--
+.LiveImmigrationPage{font-size: 9pt;}
+.LiveImmigrationGrid{font-size: 9pt;}
+.LiveImmigrationHeading{font-size: 11pt;}
+.LiveImmigrationGridRowHeader{font-size: 9pt;}
+.LiveImmigrationGridDataAlt{font-size: 9pt;}
+.LiveImmigrationGridHeader{font-size: 9pt;}
+.LiveImmigrationGridData{font-size: 9pt;}
+.LiveImmigrationGridDataError{font-size: 9pt;}
+.LiveImmigrationGridFooter{font-size: 9pt;}
+.LiveImmigrationLink{font-size: 9pt;}
+.LiveImmigrationGridNav{font-size: 9pt;}
+.LiveImmigrationButton{font-size: 9pt;}
+.LiveImmigrationEdit{font-size: 9pt;}
+.LiveImmigrationEditBGEdit{font-size: 9pt;}
+.LiveImmigrationButtonDDContent{font-size: 9pt;}
+.LiveImmigrationButtonT{font-size: 9pt;}
+.LiveImmigrationButtonTDDContent{font-size: 9pt;}
+.LiveImmigrationListItem{font-size: 9pt;}
+.LiveImmigrationTreeNodeLabel{font-size: 9pt;}
+.LiveImmigrationDPHeaderButton{font-size: 9pt;}
+.LiveImmigrationDPItem{font-size: 9pt;}
+.LiveImmigrationDPDaysOfWeek{font-size: 9pt;}
+.LiveImmigrationDPWeeksOfYear{font-size: 9pt;}
+.LiveImmigrationTPMeridianButton{font-size: 9pt;}
+.LiveImmigrationMenuItem{font-size: 9pt;}
+.LiveImmigrationMenuTitle{font-size: 9pt;}
+.LiveImmigrationMenubarHItem{font-size: 9pt;}
+.LiveImmigrationMenubarVItem{font-size: 9pt;}
+.LiveImmigrationNavMenuItem{font-size: 9pt;}
+.LiveImmigrationNavMenuTitle{font-size: 9pt;}
+.LiveImmigrationNavMenubarHItem{font-size: 9pt;}
+.LiveImmigrationNavMenubarVItem{font-size: 9pt;}
+.LiveImmigrationWinTitle{font-size: 9pt;}
+.LiveImmigrationWinBody{font-size: 9pt;}
+.LiveImmigrationWinHeader{font-size: 9pt;}
+.LiveImmigrationWinFooter{font-size: 9pt;}
+.LiveImmigrationWinTBar{font-size: 9pt;}
+.LiveImmigrationWinBBar{font-size: 9pt;}
+.LiveImmigrationDDWinTitle{font-size: 9pt;}
+.LiveImmigrationDDWinBody{font-size: 9pt;}
+.LiveImmigrationDDWinHeader{font-size: 9pt;}
+.LiveImmigrationDDWinFooter{font-size: 9pt;}
+.LiveImmigrationDDWinTBar{font-size: 9pt;}
+.LiveImmigrationDDWinBBar{font-size: 9pt;}
+.LiveImmigrationAccordionButton{font-size: 9pt;}
+.LiveImmigrationAccordionButtonSelected{font-size: 9pt;}
+.LiveImmigrationAccordionButtonDisabled{font-size: 9pt;}
+.LiveImmigrationTabTButton{font-size: 9pt;}
+.LiveImmigrationTabTButtonSelected{font-size: 9pt;}
+.LiveImmigrationTabTButtonDisabled{font-size: 9pt;}
+.LiveImmigrationTabBButton{font-size: 9pt;}
+.LiveImmigrationTabBButtonSelected{font-size: 9pt;}
+.LiveImmigrationTabBButtonDisabled{font-size: 9pt;}
+.LiveImmigrationTabLButton{font-size: 9pt;}
+.LiveImmigrationTabLButtonSelected{font-size: 9pt;}
+.LiveImmigrationTabLButtonDisabled{font-size: 9pt;}
+.LiveImmigrationTabRButton{font-size: 9pt;}
+.LiveImmigrationTabRButtonSelected{font-size: 9pt;}
+.LiveImmigrationTabRButtonDisabled{font-size: 9pt;}
+.LiveImmigrationTabbandTButton{font-size: 9pt;}
+.LiveImmigrationTabbandTButtonSelected{font-size: 9pt;}
+.LiveImmigrationTabbandTButtonDisabled{font-size: 9pt;}
+.LiveImmigrationTabbandBButton{font-size: 9pt;}
+.LiveImmigrationTabbandBButtonSelected{font-size: 9pt;}
+.LiveImmigrationTabbandBButtonDisabled{font-size: 9pt;}
+-->
+</style>
+<style type="text/css">
+.A5container {float:left;padding:0px;}
+.A5CWLayout {padding: 4px; float: left; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;}
+.A5GridHideErrorCol .A5GridErrorCol {display:none; }
+.A5GridRowErrorIcon {display:none;}
+.A5GridHasRowError .A5GridRowErrorIcon {display:inline;}
+.A5GridRowViewMode {display:block;}
+.A5GridRowEditMode {display:none;}
+.A5GridRowInEditMode .A5GridRowViewMode {display:none;}
+.A5GridRowInEditMode .A5GridRowEditMode {display:block;}
+.A5GridRowDirty {display:none;}
+.A5GridRowClean {display:inline;}
+.A5GridRowIsDirty .A5GridRowDirty {display:inline;}
+.A5GridRowIsDirty .A5GridRowClean {display:none;}
+.errorText {color:red;font-size:8pt;}
+.errorTextHighlight {font-weight:bold;font-size:8pt;}
+.errorTip {color:red;background:#fffafa url('images/$box/$size/8x8/$fill/Up%5FDiagonal:White%3A%23255%2C239%2C239.png.a5image');border:1px solid #f88;margin-top:2px;padding:2px;font-size:8pt;}
+.errorInput {color:red;border:1px solid red;margin:1px;}
+.errorInputHighlight {color:red;border:2px solid red;margin:0px;}
+.A5SelectedButton {opacity:.5;filter:alpha(opacity=50);}
+.A5InvisibleLock {background: rgba(0,0,0,0); }
+
+.A5AccordionTitleOn, .A5AccordionTitleOff, .A5AccordionTitleDisabled {display: block;border: 1px solid #999;padding: 2px;text-decoration: none;cursor: pointer;margin-bottom: 2px; padding: 2px}
+.A5AccordionPane {border: 1px solid #999;border-top: none;margin-bottom: 2px;margin-top: -2px;}
+.A5TabTopOn, .A5TabTopOff, .A5TabTopDisabled {display: block;float: left;border: 1px solid #999;border-bottom: none;margin-right: 2px;padding: 2px;text-decoration: none;cursor: pointer;}
+.A5TabTopOn {margin-bottom: -1px;padding-bottom: 3px;}
+.A5TabBottomOn, .A5TabBottomOff, .A5TabBottomDisabled {display: block;float: left;border: 1px solid #999;margin-right: 2px;padding: 2px;text-decoration: none;cursor: pointer;}
+.A5TabBottomOn {border-top: none;padding-top: 3px;}
+.A5TabLeftOn, .A5TabLeftOff, .A5TabLeftDisabled {display: block;border: 1px solid #999;margin-bottom: 2px;padding: 2px;text-decoration: none;cursor: pointer;}
+.A5TabLeftOn {margin-right: -1px;padding-right: 3px;border-right: none;}
+.A5TabRightOn, .A5TabRightOff, .A5TabRightDisabled {display: block;border: 1px solid #999;border-left: none;margin-bottom: 2px;padding: 2px;text-decoration: none;cursor: pointer;}
+.A5TabRightOn {margin-left: -1px;padding-left: 3px;}
+.A5TabTopPane, .A5TabBottomPane, .A5TabLeftPane, .A5TabRightPane {border: 1px solid #999; padding: 2px;}
+
+
+.A5TabBand {border: 1px solid #999; padding: 0px;}
+.A5TabBandTabOn, .A5TabBandTabOff, .A5TabBandTabDisabled {position: relative;display: block;border: 1px solid #999;border-bottom: none;margin-right: 2px;margin-top: 2px;padding: 2px;text-decoration: none;cursor: pointer;white-space: nowrap;}
+.A5TabBandTabOn {margin-bottom: -1px;padding-bottom: 3px;}
+.A5TabBandSeparator {border: none;border-top: 1px solid #999;height: 3px;padding: 0px;font: 0pt arial;}
+.A5TabBandLeftScroll {position: relative;display: block;padding: 2px;margin-bottom: -1px;padding-bottom: 3px;text-decoration: none;border: 1px solid #999;border-left: none;border-bottom: none;}
+.A5TabBandRightScroll {position: relative;display: block;padding: 2px;margin-bottom: -1px;padding-bottom: 3px;text-decoration: none;border: 1px solid #999;border-right: none;border-bottom: none;}
+.A5TabBandTabDisabled, .A5TabTopDisabled, .A5TabLeftDisabled, .A5TabRightDisabled, .A5TabBottomDisabled, .A5AccordionTitleDisabled {opacity: .5; filter: alpha(opacity: 50)}
+.A5Window {-moz-border-radius: 3px; -webkit-border-radius: 3px;}
+.A5WindowLock{border: 1px solid #000;background: #222;opacity: .25;filter: alpha(opacity: 25);}
+
+.A5AccordionTitleOn:hover, .A5AccordionTitleOff:hover, .A5TabBandTabOff:hover, .A5TabTopOff:hover, .A5TabLeftOff:hover, .A5TabRightOff:hover, .A5TabBottomOff:hover{text-decoration: underline;}
+
+.A5MenuItem {text-decoration:none;}
+.A5DialogRSSeparator {border-top: 1px dotted #ccc; line-height:5px; margin-top: 5px;}
+.A5DialogRSFooter {margin-top: 10px;}
+
+
+
+
+
+
+</style>
+
+<title>Live Immigration</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+
+</head>
+
+
+
+<body  class="LiveImmigrationPage"  style="padding: 0px; margin: 0px;"  >
+	
+
+
+
+
+
+<script>A5.__dtfmt = 'MM/dd/yyyy';
+A5.__flagWorkingPreview = false;
+A5.__flagIIS = false;
+A5.__flagSimulateIIS = true;
+
+
+
+;;</script>
+<iframe style="display:none;" id="TBIOBJ.__IFRAME1"></iframe>
+<input type="hidden" value="" id="tbi.PARAMETERBUCKET"/>
+<input type="hidden" value="C_userid=f6cd73f7%2d7725%2d4563%2db663%2dcebc8c78a809" id="tbi.ARGUMENTVALUES"/>
+
+
+<div style="overflow:hidden;">
+<div>
+<table width="100%" border="0" cellpadding="6" cellspacing="6" background="" bgColor=#ffffff>
+	<tr>
+		<td vAlign="middle" background="" align="left"><img src="images/logoTUIxsm.png"></td>
+		<td vAlign="middle" background="" align=right>&nbsp;</td>
+		<td vAlign="middle" background="" width="600" align="right">
+			<font color="#808080" style="FONT-WEIGHT: bold">
+				Welcome, Robert Kajiru				&nbsp;(
+					Case Assistant					)&nbsp;|&nbsp;&nbsp;
+			</font>
+			<font style="FONT-FAMILY: Arial; COLOR: #00357a">
+				<a style="TEXT-DECORATION: none" href="logout.a5w" >Logout</a>
+			</font>
+					</td>
+	</tr>
+</table>
+</div>
+</div>
+<table 
+	id="tbi" 
+	class="LiveImmigrationGrid" 
+	cellpadding="0" 
+	cellspacing="0" 
+	style="table-layout: fixed; width: 100%; border-left: none; border-right: none;">
+	<tr>
+		<td 	id="tbi.EXPANDBAR"
+				class="LiveImmigrationGridHeader"
+				style="display:none; width: 20px;"
+				valign="top"
+				onclick="tbiObj.showTabbedUIMenuPanel();"
+				>
+				<img 	id="tbi.EXPANDBAR_IMAGE" src="images/gear.png" style="cursor:pointer;"/>
+			
+		</td>
+		<td 	id="tbi.MENUPANEL"
+				class="LiveImmigrationGridDataAlt" 
+				style="padding: 0px; width: 2in; ; " 
+				vAlign="top"><!--TD for the Buttons Pane (which contains the action buttons)-->
+			<div id="tbi.MENUPANEL_HEADER" class="LiveImmigrationGridHeader" style=""> 
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+						<td		id="tbi.MENUPANEL_EMPTYCELL" 	
+								style="width: 100%;">
+						&nbsp;
+						</td>
+						<td>
+							<img 	src="images/$$generic.chevron.left.png.a5image" id="tbi.MENUPANEL_IMAGE" style="cursor:pointer;" onclick="tbiObj.hideTabbedUIMenuPanel()" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div 	id="tbi.MENU" 
+					style="padding-left:.1in;padding-top:.25in;">
+					
+				<div style="padding: 0px;">
+<div class="A5container">
+<a href="#" class="LiveImmigrationNavigatorLink" style="width: 1.8in; text-decoration: none; color: #000080; font-weight: bold;" title=""  onclick="action_tbi_82c82297_b27a_4d8f_ac41_7775b10d4566(); return false;"  >Case List Report</a>
+</div><!--breakbegin--><br style="clear:both; " /><div style="height:20px; font: 0pt;"></div><!--breakend-->
+<div class="A5container">
+<a href="#" class="LiveImmigrationNavigatorLink" style="width: 1.8in; text-decoration: none; color: #000080; font-weight: bold;" title=""  onclick="action_tbi_188399c6_816c_4f86_868c_561f5099e0f9(); return false;" onFocus="$('tbi.PANE.1').style.display='';"  >My Cases (Old)</a>
+</div><!--breakbegin--><br style="clear:both; " /><div style="height:20px; font: 0pt;"></div><!--breakend-->
+<div class="A5container">
+<a href="#" class="LiveImmigrationNavigatorLink" style="width: 1.8in; text-decoration: none; color: #000080; font-weight: bold;" title=""  onclick="action_tbi_616653d6_50ed_4642_8966_8f0ce50cfbc1(); return false;"  >My Cases</a>
+</div><!--breakbegin--><br style="clear:both; " /><div style="height:20px; font: 0pt;"></div><!--breakend-->
+<div class="A5container">
+<a href="#" class="LiveImmigrationNavigatorLink" style="width: 1.8in; text-decoration: none; color: #000080; font-weight: bold;" title=""  onclick="action_tbi_8c1254db_0e50_4b1b_9d7c_cf622c09c4b7(); return false;"  >My Settings</a>
+</div><!--breakbegin--><br style="clear:both; " /><div style="height:20px; font: 0pt;"></div><!--breakend-->
+<div class="A5container">
+<a href="#" class="LiveImmigrationNavigatorLink" style="width: 1.8in; text-decoration: none; color: #000080; font-weight: bold;" title=""  onclick="action_tbi_9675445e_b123_40d0_8db0_df03bdf3327d(); return false;"  >Archived Cases</a>
+</div><!--breakbegin--><br style="clear:both; " /><div style="height:20px; font: 0pt;"></div><!--breakend-->
+<div style="clear: both; font-size: 0pt; height: 0px;"></div>
+</div>
+<script type="text/javascript">
+
+</script>
+			</div>
+		</td><!--End TD for Buttons Pane-->
+		<td id="tbi.DIVIDER" class="LiveImmigrationGridHeader" style="width: 4px; font: 0pt Arial;padding: 0px;">
+			&nbsp;
+		</td>
+		<td 	class="LiveImmigrationGridData" 
+				id="tbi.CONTENTPANEL"
+				vAlign="top" 
+				style="padding: 0px; ">
+			<div 	id="tbi.TABBAND" 
+					style="border-top: none; border-left: none; border-right: none;">
+			</div>
+			<div id="tbi.PANES" style="position:relative;">
+			</div>
+		</td>
+	</tr>
+</table>
+<div style="overflow:hidden;">
+<div style="text-align:center;width:100%; font-size:8pt;">
+The Law Offices of Thomas Williams, PLC<br>11951 Freedom Drive, Suite 1300 Reston, VA 20190<br>Ph: 703-845-8800 | Ph: 855-845-8801 (toll free) | Fax: 866-545-0350 (toll free)  | <a href="https://join.me/liveimmigration/" target="_blank">Screen Sharing</a><br> <br>&copy; 1998 to 2015, Thomas A. Williams, III. All rights reserved.<br>
+</div>
+</div>
+
+<script type="text/javascript">window['action_tbi_82c82297_b27a_4d8f_ac41_7775b10d4566'] = function() {
+	
+		var go = new Object();
+	go.gridName = 'CaseListReport';
+	go.alias = 'tbi_CASELISTRE_211829NWLW';
+	go.workingMessage = '<img src="CSS/A5System/Images/wait.gif" /> Working...';
+	go.flagTimer = 'F';
+	go.flagQueryEcho = 'F';
+	go.flagDebugMode = 'F';
+	go.userFilter = '';
+	go.baseFilter = '';
+	go.userOrder = '';
+	go.overrideSettings = 'style_name=`LiveImmigration`'+'||';
+	go.arguments = '';
+	
+	
+	go.localArguments = 'userid|Character|Variable|__protected__userid|Session Variable|__NoDefaultValue__';
+	go.linkDefinition = '';
+	go.placeHolderValues = '';
+	go.parameterBucket = $gvs('tbi.PARAMETERBUCKET');
+	go.argumentValueBucket = $gvs('tbi.ARGUMENTVALUES');
+	go.a5_default_path = 'C_colon_|A5Webroot';
+	go.onLoadCompleteJavascript = '';
+	
+
+
+
+	
+	tbiObj.add({title: 'Case List Report',  close: false,  name :'tbi_CASELISTRE_211829NWLW', type:'grid', data: go , header: {
+	className: 'LiveImmigrationFooterTD',
+	style: {
+		borderTopStyle: 'none',
+		borderBottomStyle: 'solid',
+		borderBottomColor: '#ddd',
+		borderBottomWidth: '1px',
+		padding: '0px'
+	},
+	show: true,
+	html: '<div id="82c82297_b27a_4d8f_ac41_7775b10d4566"><div></div></div>'
+}, autoRefresh: true  }); 
+	
+}
+
+window['action_tbi_188399c6_816c_4f86_868c_561f5099e0f9'] = function() {
+	
+		var go = new Object();
+	go.gridName = 'CaseList';
+	go.alias = 'tbi_CASELIST_1253XWSO';
+	go.workingMessage = '<img src="CSS/A5System/Images/wait.gif" /> Working...';
+	go.flagTimer = 'F';
+	go.flagQueryEcho = 'F';
+	go.flagDebugMode = 'F';
+	go.userFilter = '';
+	go.baseFilter = '';
+	go.userOrder = '';
+	go.overrideSettings = 'style_name=`LiveImmigration`'+'||';
+	go.arguments = '';
+	
+	
+	go.localArguments = 'userid|Character|Variable|__protected__userid|Session Variable|__NoDefaultValue__';
+	go.linkDefinition = '';
+	go.placeHolderValues = '';
+	go.parameterBucket = $gvs('tbi.PARAMETERBUCKET');
+	go.argumentValueBucket = $gvs('tbi.ARGUMENTVALUES');
+	go.a5_default_path = 'C_colon_|A5Webroot';
+	go.onLoadCompleteJavascript = '';
+	
+
+
+
+	
+	tbiObj.add({title: 'My Cases (Old)',  name :'tbi_CASELIST_1253XWSO', type:'grid', data: go , header: {
+	className: 'LiveImmigrationFooterTD',
+	style: {
+		borderTopStyle: 'none',
+		borderBottomStyle: 'solid',
+		borderBottomColor: '#ddd',
+		borderBottomWidth: '1px',
+		padding: '0px'
+	},
+	show: true,
+	html: '<div id="188399c6_816c_4f86_868c_561f5099e0f9"><div></div></div>'
+}, autoRefresh: false  }); 
+	
+}
+
+window['action_tbi_616653d6_50ed_4642_8966_8f0ce50cfbc1'] = function() {
+	
+		var go = new Object();
+	go.gridName = 'CaseList2015';
+	go.alias = 'tbi_CASELIST20_12456QRRB';
+	go.workingMessage = '<img src="css/A5System/Images/wait.gif" /> Working...';
+	go.flagTimer = 'F';
+	go.flagQueryEcho = 'F';
+	go.flagDebugMode = 'F';
+	go.userFilter = '';
+	go.baseFilter = '';
+	go.userOrder = '';
+	go.overrideSettings = 'style_name=`LiveImmigration`'+'||';
+	go.arguments = '';
+	
+	
+	go.localArguments = 'userid|Character|Variable|__protected__userid|Session Variable|__NoDefaultValue__';
+	go.linkDefinition = '';
+	go.placeHolderValues = '';
+	go.parameterBucket = $gvs('tbi.PARAMETERBUCKET');
+	go.argumentValueBucket = $gvs('tbi.ARGUMENTVALUES');
+	go.a5_default_path = 'C_colon_|A5Webroot';
+	go.onLoadCompleteJavascript = '';
+	
+
+
+
+	
+	tbiObj.add({title: 'My Cases',  close: false,  name :'tbi_CASELIST20_12456QRRB', type:'grid', data: go , header: {
+	className: 'LiveImmigrationFooterTD',
+	style: {
+		borderTopStyle: 'none',
+		borderBottomStyle: 'solid',
+		borderBottomColor: '#ddd',
+		borderBottomWidth: '1px',
+		padding: '0px'
+	},
+	show: true,
+	html: '<div id="616653d6_50ed_4642_8966_8f0ce50cfbc1"><div></div></div>'
+}, autoRefresh: false  }); 
+	
+}
+
+window['action_tbi_8c1254db_0e50_4b1b_9d7c_cf622c09c4b7'] = function() {
+	
+		var go = new Object();
+	go.gridName = 'MySettings';
+	go.alias = 'tbi_MYSETTINGS_20850GYRW';
+	go.workingMessage = '<img src="CSS/A5System/Images/wait.gif" /> Working...';
+	go.flagTimer = 'F';
+	go.flagQueryEcho = 'F';
+	go.flagDebugMode = 'F';
+	go.userFilter = '';
+	go.baseFilter = '';
+	go.userOrder = '';
+	go.overrideSettings = 'style_name=`LiveImmigration`'+'||';
+	go.arguments = '';
+	
+	
+	go.localArguments = 'userid|Character|Variable|__protected__userid|Session Variable|__NoDefaultValue__';
+	go.linkDefinition = '';
+	go.placeHolderValues = '';
+	go.parameterBucket = $gvs('tbi.PARAMETERBUCKET');
+	go.argumentValueBucket = $gvs('tbi.ARGUMENTVALUES');
+	go.a5_default_path = 'C_colon_|A5Webroot';
+	go.onLoadCompleteJavascript = '';
+	
+
+
+
+	
+	tbiObj.add({title: 'My Settings',  name :'tbi_MYSETTINGS_20850GYRW', type:'grid', data: go , header: {
+	className: 'LiveImmigrationFooterTD',
+	style: {
+		borderTopStyle: 'none',
+		borderBottomStyle: 'solid',
+		borderBottomColor: '#ddd',
+		borderBottomWidth: '1px',
+		padding: '0px'
+	},
+	show: true,
+	html: '<div id="8c1254db_0e50_4b1b_9d7c_cf622c09c4b7"><div></div></div>'
+}, autoRefresh: false  }); 
+	
+}
+
+window['action_tbi_9675445e_b123_40d0_8db0_df03bdf3327d'] = function() {
+	
+		var go = new Object();
+	go.gridName = 'ArchivedCaseList';
+	go.alias = 'tbi_ARCHIVEDCA_73354XKJZ';
+	go.workingMessage = '<img src="CSS/A5System/Images/wait.gif" /> Working...';
+	go.flagTimer = 'F';
+	go.flagQueryEcho = 'F';
+	go.flagDebugMode = 'F';
+	go.userFilter = '';
+	go.baseFilter = '';
+	go.userOrder = '';
+	go.overrideSettings = 'style_name=`LiveImmigration`'+'||';
+	go.arguments = '';
+	
+	
+	go.localArguments = 'userid|Character|Variable|__protected__userid|Session Variable|__NoDefaultValue__';
+	go.linkDefinition = '';
+	go.placeHolderValues = '';
+	go.parameterBucket = $gvs('tbi.PARAMETERBUCKET');
+	go.argumentValueBucket = $gvs('tbi.ARGUMENTVALUES');
+	go.a5_default_path = 'C_colon_|A5Webroot';
+	go.onLoadCompleteJavascript = '';
+	
+
+
+
+	
+	tbiObj.add({title: 'Archived Cases',  name :'tbi_ARCHIVEDCA_73354XKJZ', type:'grid', data: go , header: {
+	className: 'LiveImmigrationFooterTD',
+	style: {
+		borderTopStyle: 'none',
+		borderBottomStyle: 'solid',
+		borderBottomColor: '#ddd',
+		borderBottomWidth: '1px',
+		padding: '0px'
+	},
+	show: true,
+	html: '<div id="9675445e_b123_40d0_8db0_df03bdf3327d"><div></div></div>'
+}, autoRefresh: true  }); 
+	
+}
+
+
+	
+var tbiObj = new A5.TabbedInterfaceComponentHelper('tbi',{
+	fill: true,
+	minHeight: 0,
+	tabBand: {
+		location: 'top',
+		theme: 'LiveImmigration',
+		separator: {
+			show: true
+		},
+		tab: {
+			close: true
+		},
+		hide: false
+	},
+	pane: {
+		padding: 2
+	}
+});
+tbiObj._functions = {};
+tbiObj._buttons = [];
+var homePageHTML = '<div style="padding:24px;"><font style="font-family:Tahoma;font-size:18pt; font-weight:bold;">Home</font></div>';
+tbiObj.add({title: 'Home', type: 'static', html: homePageHTML , close: false, autoRefresh: true});
+
+
+
+
+tbiObj.showTabbedUIMenuPanel = function() { 
+	if(typeof jQuery != 'undefined') {
+		var ele = $('tbi.MENUPANEL');
+		ele.style.display = '';
+		$('tbi.EXPANDBAR').style.display = 'none';
+		jQuery(ele).animate({width:$ga(ele,'A5OLDWIDTH') }, tbiObj._showAnimationSpeed,'');
+		tbiObj.refreshLayout();
+	} else {
+		$('tbi.MENUPANEL').style.display=''; $('tbi.EXPANDBAR').style.display = 'none'; tbiObj.refreshLayout();	
+	}
+
+	}
+tbiObj.hideTabbedUIMenuPanel = function() { 	
+	if(typeof jQuery != 'undefined') {
+		var ele = $('tbi.MENUPANEL');
+		if($ga(ele,'A5OLDWIDTH') == '' || $ga(ele,'A5OLDWIDTH') == null) $sa(ele,'A5OLDWIDTH',ele.style.width);
+		jQuery(ele).animate({width:22}, tbiObj._hideAnimationSpeed,'',function() {
+		    var mele = $('tbi.MENUPANEL');
+		    mele.style.display='none';
+		    $('tbi.EXPANDBAR').style.display = '';
+		});	
+	} else {
+		$('tbi.MENUPANEL').style.display='none'; $('tbi.EXPANDBAR').style.display = '';
+	}
+	}
+
+
+tbiObj._defaultWindowSettings = new Object();
+tbiObj._defaultWindowSettings['dropdown'] = {
+	type: 'popup',
+	theme: this.styleName,
+	title: {html: 'Null',show: false},
+	body:  {content: {type: 'blank'}}
+};		
+
+
+tbiObj._defaultWindowSettings['modal'] = {
+	type: 'modal', autoPosition: 'in-view',
+	theme: this.styleName,
+	title: {html: 'Customer Grid', 
+		tools: {items: [{action: 'close',name: 'Close',image: 'images/$$window.button.close.png.a5image'}],
+			dummy: false
+		}},
+	body: {content: {type: 'blank'}}
+};
+
+tbiObj._defaultWindowSettings['modeless'] = {
+	type: 'modeless', autoPosition: 'in-view',
+	theme: this.styleName,
+	title: {html: 'Customer Grid', 
+		tools: {items: [{action: 'close',name: 'Close',image: 'images/$$window.button.close.png.a5image'}],
+			dummy: false
+		}},
+	body: {content: {type: 'blank'}}
+};
+
+tbiObj._genericWindow = new Object();
+
+
+tbiObj.getCurrentPaneIndex = function() { 
+	return tbiObj._tbObj._curTabIndx;
+}
+
+tbiObj.getCurrentPaneName = function() { 
+	return tbiObj._tbObj._items[tbiObj._tbObj._curTabIndx].name;
+}
+
+tbiObj.getCurrentPaneLabel = function() { 
+	return tbiObj._tbObj._items[tbiObj._tbObj._curTabIndx].html;
+}
+  
+
+tbiObj.selectPaneByIndex = function(index) {
+	tbiObj._tbObj.select(index);
+}
+
+
+tbiObj.createWindow =  function(name,settings) {
+	if(!this.getWindow(name)) {
+		if(typeof settings == 'string') {
+			var parts = settings.split('-');
+			settings = new Object();
+			$u.o.assign(settings , this._defaultWindowSettings[parts.shift()]);
+			for(var i=0;i<parts.length;i++){
+				if(parts[i] == 'url'){
+					settings.body.content.type = 'url';
+					settings.body.content.url = 'about:blank';
+				} else if(parts[i] == 'resizable'){
+					settings.resize = 'both';
+				}
+			}
+		}
+		if(typeof arguments[2] == 'object') $u.o.assign(settings,arguments[2]);
+		this._genericWindow[name] = new A5.Window(settings);
+	}
+	return this._genericWindow[name];
+}
+	
+tbiObj.getWindow =  function(name) {
+	if(typeof this._genericWindow[name] != 'undefined' ) return this._genericWindow[name];
+	return false;
+}
+
+
+
+tbiObj.ajaxCallback = function(xbasicFunction,data) {
+	var callbackURL = tbiObj.ajaxURL;
+	var data2 = '_callbackType=genericAjaxCallback&_xbasicFunction=' + xbasicFunction + '&' + data;
+	A5.ajax.callback(callbackURL,data2);
+}
+
+tbiObj._timeToSessionTimeout = function(units) {
+	if(isNaN($a.lastCallback)) return 9999999999999999;
+	var t = (Date.now() - $a.lastCallback);
+	var tte = (tbiObj._sessionTimeoutInMSeconds - t); 
+	if(units == 's') return (tte/1000);
+	if(units == 'm') return (tte/60000);
+	if(units == 'ms') return (tte);
+	return tte
+}
+
+
+
+tbiObj._executeEvent = function(eventName) {
+	var result = true;
+	var targs = new Array();
+	for(var i = 1; i < arguments.length; i++) targs.push(arguments[i]);
+	var tresult = false;
+	if(typeof this[eventName] != 'undefined'  ) {
+
+		if(this[eventName].constructor == Function) {
+			tresult = this[eventName].apply(this,targs);
+			if(typeof tresult == 'boolean') result = tresult;
+		}
+	}
+	if(typeof this['_' +eventName] != 'undefined' ) {
+		if(this['_'+eventName].constructor == Function) {
+			tresult = this['_'+eventName].apply(this,targs);
+			if(typeof tresult == 'boolean') result = result && tresult;
+		}
+		
+	}
+	return result;
+}
+
+
+
+
+
+tbiObj._hideAnimationSpeed = 600;
+tbiObj._showAnimationSpeed = 600;;
+tbiObj.hideTabbedUIMenuPanel();
+$('tbi.DIVIDER').style.width='1px';
+$('tbi.EXPANDBAR').style.width='14px';
+$('tbi.TABBAND').style.background='none';;
+;
+
+A5.msgBox.theme = 'LiveImmigration';;
+tbiObj._onRenderComplete = function() {
+	
+	
+	
+	tbiObj.ajaxURL = '/TabbedUI_TUIMain.a5w';
+	
+
+tbiObj._startSessionTimeoutCheckTimer = function() {}
+tbiObj._stopSessionTimeoutCheckTimer = function() {}
+
+	tbiObj._embeddedMode = false;
+}
+
+tbiObj._executeEvent('onRenderComplete',{});
+;
+</script><script>
+;
+;action_tbi_82c82297_b27a_4d8f_ac41_7775b10d4566();;action_tbi_616653d6_50ed_4642_8966_8f0ce50cfbc1();</script></body>
+</html>
+

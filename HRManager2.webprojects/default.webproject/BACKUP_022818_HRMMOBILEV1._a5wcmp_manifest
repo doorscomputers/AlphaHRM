@@ -1,0 +1,17 @@
+A5SaveTimeStamp:20180228084412118
+css:Alpha
+subComponent:EmployeeMobile.a5wcmp
+subComponent:CompanyMobV1.a5wcmp
+subComponent:UsersMobV1.a5wcmp
+subComponent:UsersAndRoles.a5wcmp
+subComponent:NewCoAdminV1.a5wcmp
+subComponent:NewEmployeeMobV1.a5wcmp
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\android-icon-36x36.png}
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\android-icon-48x48.png}
+copyfile:{C:\a5\projects\HRManager\HRManager.WebProjects\Default.WebProject\css\A5System\Images\wait.gif}
+subComponent:EmployeeMobile
+subComponent:CompanyMobV1
+subComponent:UsersMobV1
+subComponent:UsersAndRoles
+subComponent:NewCoAdminV1
+subComponent:NewEmployeeMobV1

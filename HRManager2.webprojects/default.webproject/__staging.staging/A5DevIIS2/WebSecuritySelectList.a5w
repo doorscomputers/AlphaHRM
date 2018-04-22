@@ -1,0 +1,63 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+
+<html>
+<head>
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<%a5
+session.SelUserID = SelUserID
+%>
+
+<%a5
+'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE - 'PAGE FORMAT:V10
+dim componentAlias as c
+'The componentAlias MUST be UNIQUE for each component on the page. ComponentAlias may not have spaces. Keep the name as short as possible.
+componentAlias = "WebSecurit"
+Delete tmpl
+DIM tmpl as P
+tmpl = a5w_load_component("WebSecuritySelectList") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:WebSecuritySelectList)
+'Following code allows you to override settings in the saved component.
+tmpl.override_settings = <<%override_settings%
+	componentName = componentAlias
+	_gridFilename = "WebSecuritySelectList"
+%override_settings%
+'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+'	dim pageVar as p
+'	pageVar.gridRowCount = 10
+'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+'	rows = pageVar.gridRowCount
+'Resolve session and page variables in the override_settings string.
+a5w_resolveVariablesInOverrideSettings(tmpl,session,local_variables())
+delete x_out
+dim x_out as p
+x_out = a5w_run_Component(tmpl) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:WebSecuritySelectList)
+if x_out.RedirectURL <> "" then 
+	response.redirect(x_out.redirectURL)
+	end
+end if 
+?x_out.Output.Head.JavaScript
+?x_out.Output.Head.CSS_Link
+%>
+
+<title>WebSecuritySelectList</title>
+</head>
+
+<body class="GradientBluePageBODY" background="" leftMargin=20 topMargin=12><!-- Any text that you want to output above the component goes here-->
+<table border=0 cellSpacing=0 cellPadding=0 background="" align=center><!--Table enclosing Grid component-->
+	<tr><!--Table row for Grid Search Part-->
+		<td><!--Table cell for Grid Search Part (Will be blank if Grid uses a Master Layout Template)-->
+			<%A5 ?x_out.Output.Body.Search_HTML %></td><!--End table cell for Grid Search Part-->
+	</tr><!--End table row for Grid Search Part-->
+	<tr><!--Table row for Grid Part-->
+		<td><%A5 ?x_out.Output.Body.Grid_HTML %></td>
+	</tr><!--End table row for Grid Part-->
+	<tr><!--Table row for Grid Detail View Part-->
+		<td><!--Table cell for Grid Detail View Part (Will be blank if Grid uses a Master Layout Template)-->
+			<%A5 ?x_out.Output.Body.DetailView_HTML	%></td><!--End table cell for Grid Search Part-->
+	</tr><!--End table row for Grid Search Part-->
+</table><!--End table enclosing Grid component-->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+
+<head>
+
+
+<%a5
+Delete tmpl_CompanyCal
+DIM tmpl_CompanyCal as P
+tmpl_CompanyCal = a5w_load_component("CompanyCalendar") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:CompanyCalendar)
+
+'Override settings start -----------------------------------------
+tmpl_CompanyCal.override_settings = <<%override_settings%
+	.alias = "CompanyCal"
+_customComponentFilename = "CompanyCalendar"
+	_gridFilename = "CompanyCalendar"
+%override_settings%
+
+
+a5w_resolveVariablesInOverrideSettings(tmpl_CompanyCal,session,local_variables())
+ 
+'Override settings end -----------------------------------------
+
+delete x_CompanyCal
+dim x_CompanyCal as p
+x_CompanyCal = a5w_run_Component(tmpl_CompanyCal) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:CompanyCalendar)
+
+?x_CompanyCal.Output.Head.JavaScript
+?x_CompanyCal.Output.Head.CSS_Link
+
+?x_CompanyCal.Output.Head.Title 
+%>
+
+
+
+
+</head>
+
+
+<body class="NDDIBluePage">
+
+
+
+
+<%a5 ?x_CompanyCal.Output.Body.CustomComponent_HTML %>
+
+</body>
+
+</html>
+

@@ -1,0 +1,2552 @@
+{
+    "$schema": "GRID",
+    "$definition": {
+        "_style_hasSassOverrides": false,
+        "SecurityModel": "Group Based",
+        "GUID": "75c8c3d6-d37d-4339-982d-6372a56eb88d",
+        "DateFormatOnClient": "DD/MM/YY",
+        "clientSideDateFormat": "MM/dd/yyyy",
+        "flagTreeViewGrid": true,
+        "flagTreeViewDV": true,
+        "componentType": "Grid",
+        "Xbasic": "dim tmpl as p\ntmpl.ComponentName = \"SuggestionBox\"\ntmpl.ComponentType = \"Grid\"\ntmpl.AjaxOn = .t.\ntmpl.LayoutColumns = 1\ntmpl.useCompactTheme = .t.\ntmpl.queryEcho = .f.\ntmpl.connectToWebSocketServer = .f.\ntmpl.flagAddPKToORDER = .t.\ntmpl.saveFileType = \"Formatted JSON\"\ntmpl.captureJSErrorStackTrace = .f.\ntmpl.SecurityModel = \"Group Based\"\ntmpl.SecurityMode = \"\"\ntmpl.PreCalcMode = \"Standard\"\ntmpl.clientSideDateFormat = \"MM/dd/yyyy\"\ntmpl.datePicker.dayNames = \"Sun,Mon,Tue,Wed,Thu,Fri,Sat\"\ntmpl.datePicker.firstDayOfWeek = 1\ntmpl.datePicker.monthNames = \"January,February,March,April,May,June,July,August,September,October,November,December\"\ntmpl.datePicker.todayButtonText = \"Today\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.publishedServerVariables = \"\"\ntmpl.customizationString.javascriptDialogs = \"\"\ntmpl.iconMapOverrides = \"\"\ntmpl.DataSourceType = \"CS\"\ntmpl.CS.database_type = \"CS\"\ntmpl.CS.type = \"connectionstring\"\ntmpl.cs.ConnectionString  = \"::name::SQL\"\ntmpl.CS.SQL = \"SELECT ID, Type, Note, DateCreated, ReviewedBy, ReviewDate \"+chr(13)+chr(10)+\"FROM Suggestion\"\nDIM tmpl.Arguments[1] AS P\nwith tmpl.Arguments[1]\n\t.Name = \"\"\n\t.DataType = \"\"\n\t.Source = \"\"\n\t.SourceDisplay = \"\"\n\t.VariableScope = \"\"\n\t.VariableName = \"\"\n\t.VariableWithScope = \"\"\n\t.DefaultValue = \"\"\n\t.Prompt = .f.\n\t.PromptText = \"\"\n\t.PromptControlType = \"\"\n\t.PromptChoices = \"\"\n\t.PromptDlgTitle = \"\"\n\t.PromptTextAbove = \"\"\n\t.PreviewValue = \"\"\nend with\nDIM tmpl.ArgumentsPage AS P\nwith tmpl.ArgumentsPage\n\t.PromptTextAbove = \"\"\nend with\ntmpl.CS.PrimaryKeyColumns = \"Suggestion|ID\"\ntmpl.CS.IdentitySequenceName  = \"\"\ntmpl.CS.primaryKeyTopAliasIsAutoIncrement  = .f.\nDIM tmpl.update.tables[1] as p\nwith tmpl.update.tables[1]\n\t.Name = \"Suggestion\"\n\t.Table_Alias = \"Suggestion\"\n\t.PrimaryKey = \"ID\"\nEnd With\ntmpl.search.has_search_component = .t.\ntmpl.search.title = \"Search \"\ntmpl.search.show_title = .t.\ntmpl.search.search_button_label = \"Search\"\ntmpl.search.include_sorting_listbox = .f.\ntmpl.search.sort.prompt = \"Sort&nbsp;by\"\ntmpl.search.sorting_listbox_Label_position = \"Left\"\ntmpl.search.sort.promptInLineStyle = \"\"\ntmpl.search.sort.listbox.fieldname_prompt = \"Select Field\"\ntmpl.search.sort.listbox.use_column_headings = .f.\ntmpl.search.customSortDefinition = \"\"\ntmpl.search.search_button.useIcon = .f.\ntmpl.search.clear_link.useIcon = .f.\ntmpl.search.sort.listbox.order_prompt = \"Select Order\"\ntmpl.search.sort.listbox.order_choices = \"Ascending,Descending\"\ntmpl.search.include_records_per_page_listbox = .f.\ntmpl.search.records_per_page.prompt = \"Records&nbsp;per&nbsp;page\"\ntmpl.search.records_per_page_Label_position = \"Left\"\ntmpl.search.records_per_page.promptInLineStyle = \"\"\ntmpl.search.records_per_page.listbox.value_prompt = \"Select Value\"\ntmpl.search.records_per_page.listbox.choices = \"1,2,5,10,25,50,75,100\"\ntmpl.search.orientation = \"Vertical\"\ntmpl.search.combine_criteria_using = 1\ntmpl.search.style = 2\ntmpl.search.allow_qbf_style = .t.\ntmpl.search.show_single_search_field = .f.\ntmpl.search.keyword_label = \"Search for?\"\ntmpl.search.has_Clear_link = .t.\ntmpl.search.Clear_link_Label = \"Clear Search Criteria\"\ntmpl.search.Clear_link_BubbleHelp = \"Clear Search\"\ntmpl.search.EnableShowHide  = .f.\ntmpl.search.InitialState = \"Open\"\ntmpl.search.title_when_hidden = \"Click here to search...\"\ntmpl.search.qbe_exclusions = \"\"\ntmpl.search.toolbarPosition = \"Below\"\ntmpl.search.disableAutoComplete = .f.\ntmpl.search.HideGridWhenNoActiveSearch = .f.\ntmpl.search.GridHTMLWhenHidden  = \"\"\ntmpl.EditRegion.Search.Top = \"\"\ntmpl.EditRegion.Search.Bottom = \"\"\ntmpl.EditRegion.Search.Left = \"\"\ntmpl.EditRegion.Search.Right = \"\"\ntmpl.search.allowSearchCriteriaSave = .f.\ntmpl.search.allowSearchCriteriaLoad = .f.\ntmpl.SearchFields = 1\nDIM tmpl.SearchField_Info[tmpl.SearchFields] as P \nwith tmpl.searchfield_info[1]\n\t.Fieldname = \"Type\"\n\t.SearchExpression = \"Type\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"TYPE\"\n\t.Column.LabelPosition = \"Above\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Static\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropdownBox.Choices = <<%txt%\nSuggestion\nIncident Report\nEmployee Relations\n%txt%\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Type\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Suggestion Type\"\nend with\ntmpl.grid_layout_style = 1\ntmpl.add_records_only = .f.\ntmpl.rows = 10\ntmpl.maxRowsPerPage = 200\ntmpl.rowsWhenSearchActive = -1\ntmpl.suppress_empty_rows = .t.\ntmpl.has_row_separator = .t.\ntmpl.alternate_bands = .t.\ntmpl.even_band_size = 1\ntmpl.odd_band_size = 1\ntmpl.alternate_column_bands = .f.\ntmpl.even_column_band_size = 1\ntmpl.odd_column_band_size = 1\ntmpl.conditionalStyle = \"\"\ntmpl.clientSideConditionalStyle = \"\"\ntmpl.show_title = .f.\ntmpl.title = \"\"\ntmpl.FontSize = \"Medium\"\ntmpl.No_records_message = \"<table border=\\\"0\\\" cellpadding=\\\"20\\\" cellspacing=\\\"1\\\"><tr><td>&nbsp;<font style=\\\"font-size:14pt; font-weight:bold;\\\">There are no records on file...</font></td></tr></table>\"\ntmpl.total_records_row_position = 1\ntmpl.total_records_row = \"Records:&nbsp; {Total_Records}&nbsp;\"\ntmpl.show_column_titles = 1\ntmpl.suppress_titles_if_no_records = .t.\ntmpl.show_row_labels = .t.\ntmpl.snakingLayout_suppressRepeatedLabels = .f.\ntmpl.sort_style = 3\ntmpl.reset_page_number_when_sorting = .t.\ntmpl.allowGridBodyScrolling = .f.\ntmpl.scrollableRegionHeight = \"2in\"\ntmpl.scrollableRegionWidth = \"100%\"\ntmpl.fixedWidthColumns = .f.\ntmpl.defaultColumnWidth = \"1in\"\ntmpl.columnWidthSettings = \"\"\ntmpl.EditRegion.Grid.Top = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Bottom = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Left = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Right = <<%editregion%\n%editregion%\ntmpl.HasNewRecordsTitle = .f.\ntmpl.NewRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >New Records</td></tr>\"\ntmpl.HasExistingRecordsTitle = .f.\ntmpl.ExistingRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >Existing Records</td></tr>\"\ntmpl.Highlight_row_onHover =  .f.\ntmpl.Highlight_row_onSelect =  .f.\ntmpl.HasRecordsPerPageSelector = .t.\ntmpl.RecordsPerPageChoices =   \"5,10,15,25,50,75,100\"\ntmpl.RecordsPerPageSelectorTemplate = \"&nbsp;&nbsp;{Grid.RecordsPerPageSelector} Records per page\"\ntmpl.has_qbe_row = .f.\ntmpl.qbe.initial_display = \"Hidden\"\ntmpl.qbe.toggleQBERowHyperlinkText = \"Show/Hide QBE Row\"\ntmpl.hasLinkedContent = .f.\ntmpl.hasExternalNavigators = .f.\ntmpl.hasRowExpandColumn = .f.\ntmpl.hasSelectedRowColumn = .f.\ntmpl.hasCheckboxSelectColumn = .f.\ntmpl.AdditionalGridStyles = \"\"\ntmpl.LocalCss = \"\"\ntmpl.CSSLinkedFiles = \"\"\ntmpl.localsvg = \"\"\ntmpl.SVGLinkedFiles = \"\"\ntmpl.CSSIcons = \"\"\ntmpl.JavaScriptLinkedFiles = \"\"\ntmpl.useMasterTemplate = .f.\ntmpl.MasterTemplateStyle = \"Table - Vertical Layout\"\ntmpl.MasterLayoutTemplate = \"\"\ntmpl.MasterLayoutTemplateJavascript = \"\"\ntmpl.MasterLayout.PaneLabel.Search = \"Search\"\ntmpl.MasterLayout.PaneLabel.Grid = \"Grid\"\ntmpl.MasterLayout.PaneLabel.DetailView = \"Detail\"\ntmpl.MasterLayout.AccordionStyle = \"Multiple\"\ntmpl.MasterLayout.InitialOpenPanes = \"Search,Grid,DetailView\"\ntmpl.verticalAlignDataInColumns = \"Middle\"\ntmpl.CanCollapseGrid = .f.\ntmpl.CollapseBar.Title = \"Collapse Grid\"\ntmpl.CollapseBar.OpenIcon = \"\"\ntmpl.CollapseBar.ClosedIcon = \"\"\ntmpl.CollapseBar.Style = \"\"\ntmpl.Collapsebar.Class = \"\"\ntmpl.Collapsebar.ContainerStyle = \"\"\ntmpl.Collapsebar.ContainerClass = \"\"\ntmpl.Collapsebar.InitialState = \"open\"\ntmpl.languageTags_RemoveUnConsumedTags = .t.\ntmpl.activeLanguage = \"<Default>\"\ntmpl.search.highlightSearchStrings = .f.\ntmpl.autoRefreshGrid = .f.\ntmpl.autoRefreshInterval = 60\ntmpl.helpTableType = \"DBF\"\ntmpl.helpTableName = \"\"\ntmpl.helpConnectionString = \"\"\ntmpl.helpIDfield = \"\"\ntmpl.helpContentsField = \"\"\ntmpl.fieldHelpWindowStyle = \"modal-resizeable\"\ntmpl.fields = 6\nDIM tmpl.field_info[tmpl.fields] as P \nwith tmpl.field_info[1]\n\t.Fieldname = \"ID\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: left;\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"ID\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"ID\"\n\t.Column.Sort = \"ID\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\nwith tmpl.field_info[2]\n\t.Fieldname = \"Type\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"TYPE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Type\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Suggestion Type\"\n\t.Column.Sort = \"Type\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\nwith tmpl.field_info[3]\n\t.Fieldname = \"DateCreated\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"TimeStamp\"\n\t.nativeType = \"\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DATECREATED\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"DateCreated\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Date Created\"\n\t.Column.Sort = \"DateCreated\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\nwith tmpl.field_info[4]\n\t.Fieldname = \"ReviewedBy\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"REVIEWEDBY\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"ReviewedBy\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Reviewed By\"\n\t.Column.Sort = \"ReviewedBy\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\nwith tmpl.field_info[5]\n\t.Fieldname = \"ReviewDate\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"TimeStamp\"\n\t.nativeType = \"\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"REVIEWDATE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"Break after\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"ReviewDate\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Review Date\"\n\t.Column.Sort = \"ReviewDate\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\nwith tmpl.field_info[6]\n\t.Fieldname = \"Note\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"NOTE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Note\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Note\"\n\t.Column.Sort = \"Note\"\n\t.Column.InLineStyle = \"width: 5in; border-top:solid 1px #d0d0d0; padding-top:10px; padding-bottom:10px;\"\nend with\ntmpl.RecordNavigationStyle = \"NavigationButtons\"\ntmpl.fetchMoreRecordsButton.text = \"More Records\"\ntmpl.fetchMoreRecordsButton.style = \"\"\ntmpl.RecNav.SuppressIfOnlyOnePage = .t.\ntmpl.RecNav.First_Label = \"First\"\ntmpl.RecNav.Has_First_Button = .t.\ntmpl.RecNav.Has_Last_Button = .t.\ntmpl.RecNav.Has_Next_Button = .t.\ntmpl.RecNav.Has_Prev_Button = .t.\ntmpl.RecNav.HTML_Template_source = \"Computed\"\ntmpl.RecNav.Justify = \"Left\"\ntmpl.RecNav.Last_Label = \"Last\"\ntmpl.RecNav.Next_Label = \"Next\"\ntmpl.RecNav.Number_of_page_links = 10\ntmpl.RecNav.Page_Numbering_Style = 3\ntmpl.RecNav.PagesTemplate_w_PageCount = \"{PageNumber} of {PageCount}\"\ntmpl.RecNav.PagesTemplate_wout_PageCount = \"{PageNumber}\"\ntmpl.RecNav.Position = 1\ntmpl.RecNav.suppress_recNavBar_if_no_records = .f.\ntmpl.RecNav.Prev_Label = \"Prev\"\ntmpl.RecNav.Show_disabled_controls = .t.\ntmpl.RecNav.Show_Page_Count = .t.\ntmpl.RecNav.Use_Images = .f.\ntmpl.gridToolbarTemplate = <<%html%\n%html%\ntmpl.gridToolbarTemplateEditable = <<%html%\n%html%\ntmpl.style_name = \"NDDIBlue\"\ntmpl.resolveAbstractClassNames = .t.\ntmpl.style_type = \"Alpha Five\"\ntmpl.UseSimpleStyles = .f.\ntmpl.overrideStylesForJavascriptObjects = .f.\ntmpl.searchBehavior = \"\"\ntmpl.GUID = \"75c8c3d6-d37d-4339-982d-6372a56eb88d\"\ntmpl.onlyIncludeSelectedFieldsInQuery = .t.\ntmpl.hasGroupBreaks = .f.\ntmpl.groupBreaks.expression1 = \"\"\ntmpl.groupBreaks.direction1 = \"\"\ntmpl.groupBreaks.header1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.footer1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.collapseAllGroupsOnInitialDisplay = .f.\ntmpl.timestamp = \"2018-03-26:19-19-17.120\"\ntmpl.resolveAbstractClassNamesAtDesignTime  = .f.\ntmpl.resolveAbstractIconNamesAtDesignTime = .f. \ntmpl.useLegacyDatePicker = .f.\ntmpl.javascriptUnboundActionDefinitions = <<%javascriptActions%\n%javascriptActions%\n\ntmpl.precalc.sessionVarsInShowHideExpns = <<%sessionvars%\n%sessionvars%\ntmpl.precalc.unboundActionsXbasicFunctions = \"\"\ntmpl.precalc.includeS3Javascript = .f.",
+        "datasourceType": 3,
+        "componentName": "SuggestionBox",
+        "query_ado": {
+            "mdb_or_cs": 1,
+            "connection_type": 1,
+            "base_on": 1,
+            "Arguments": [
+                {}
+            ]
+        },
+        "query_cs": {
+            "connection_type": 1,
+            "connection_name": "SQL",
+            "base_on": 2,
+            "sql_select": "SELECT ID, Type, Note, DateCreated, ReviewedBy, ReviewDate \nFROM Suggestion",
+            "database_type": "CS",
+            "FieldInfo": "<a_expn<[1]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"ID\">\n<basecolumn=\"ID\">\n<varname=\"ID\">\n<basetable=\"Suggestion\">\n<alias_to_update=\"Suggestion\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"ID\">\n<searchExpression=\"ID\">\n>\n<[2]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"Type\">\n<basecolumn=\"Type\">\n<varname=\"Type\">\n<basetable=\"Suggestion\">\n<alias_to_update=\"Suggestion\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Type\">\n<searchExpression=\"Type\">\n>\n<[3]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"Note\">\n<basecolumn=\"Note\">\n<varname=\"Note\">\n<basetable=\"Suggestion\">\n<alias_to_update=\"Suggestion\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Note\">\n<searchExpression=\"Note\">\n>\n<[4]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"\">\n<portable_type=\"TimeStamp\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"DateCreated\">\n<basecolumn=\"DateCreated\">\n<varname=\"DateCreated\">\n<basetable=\"Suggestion\">\n<alias_to_update=\"Suggestion\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"DateCreated\">\n<searchExpression=\"DateCreated\">\n>\n<[5]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=40>\n<name=\"ReviewedBy\">\n<basecolumn=\"ReviewedBy\">\n<varname=\"ReviewedBy\">\n<basetable=\"Suggestion\">\n<alias_to_update=\"Suggestion\">\n<Precision=40>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"ReviewedBy\">\n<searchExpression=\"ReviewedBy\">\n>\n<[6]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"\">\n<portable_type=\"TimeStamp\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"ReviewDate\">\n<basecolumn=\"ReviewDate\">\n<varname=\"ReviewDate\">\n<basetable=\"Suggestion\">\n<alias_to_update=\"Suggestion\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"ReviewDate\">\n<searchExpression=\"ReviewDate\">\n>\n>\n",
+            "SQLBuilder": {
+                "SQL": "SELECT ID, Type, Note, DateCreated, ReviewedBy, ReviewDate \nFROM Suggestion",
+                "PrimaryKeyData": "<arrTables<[1]<Primary_Key=\"ID\">\n<Name=\"Suggestion\">\n<alias=\"Suggestion\">\n>\n>\n",
+                "ColumnAliases": "ID|||||||ID\nType|||||||Type\nNote|||||||Note\nDateCreated|||||||DateCreated\nReviewedBy|||||||ReviewedBy\nReviewDate|||||||ReviewDate\n",
+                "ColumnTypes": "ID=N\nType=C\nNote=C\nDateCreated=T\nReviewedBy=C\nReviewDate=T\n",
+                "ColumnNativeTypes": "ID=\nType=\nNote=\nDateCreated=\nReviewedBy=\nReviewDate=\n",
+                "ColumnPortableTypes": "ID=Integer32\nType=NationalVaryingCharacter\nNote=NationalVaryingCharacter\nDateCreated=TimeStamp\nReviewedBy=NationalVaryingCharacter\nReviewDate=TimeStamp\n",
+                "CanBeUsedInWhereClauseFields": "ID\nType\nNote\nDateCreated\nReviewedBy\nReviewDate\n",
+                "lastbutton": "OK"
+            },
+            "Arguments": [
+                {}
+            ]
+        },
+        "query_dbf": {
+            "type": "Table",
+            "Direction": "Ascending",
+            "JoinInfo": {
+                "a_tables": [
+                    {}
+                ]
+            },
+            "Arguments": [
+                {}
+            ]
+        },
+        "fields": {
+            "a_fields": [
+                {
+                    "fieldname": "ID",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "InLineStyle": "text-align: left;"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "InLineStyle": "text-align: right;",
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "ID",
+                        "InLineStyle": "font-weight: bold;",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "ID"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "ID",
+                    "type": "N",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "ID",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "Integer32",
+                    "width": 11,
+                    "varname": "ID",
+                    "Display": "ID",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ID}ID",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ID}ID",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"ID\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: left;\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"ID\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"ID\"\n\t.Column.Sort = \"ID\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\n\n\n\n",
+                    "index": 1000
+                },
+                {
+                    "fieldname": "Type",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Suggestion Type",
+                        "InLineStyle": "font-weight: bold;",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Type"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "Type",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "Type",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "Type",
+                    "Display": "Type",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Type}Type",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Type}Type",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Type\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"TYPE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Type\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Suggestion Type\"\n\t.Column.Sort = \"Type\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\n\n\n\n",
+                    "index": 2000
+                },
+                {
+                    "fieldname": "DateCreated",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "Display": true,
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultDateOnlyFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Date Created",
+                        "InLineStyle": "font-weight: bold;",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "DateCreated"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "DateCreated",
+                    "type": "T",
+                    "DisplayFormat": "time(\"{grid.clientSideDateFormat}\",<value>)",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "DateCreated",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "TimeStamp",
+                    "width": 17,
+                    "varname": "DateCreated",
+                    "Display": "DateCreated",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=DateCreated}DateCreated",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=DateCreated}DateCreated",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"DateCreated\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"TimeStamp\"\n\t.nativeType = \"\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DATECREATED\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"DateCreated\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Date Created\"\n\t.Column.Sort = \"DateCreated\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\n\n\n\n",
+                    "index": 4000
+                },
+                {
+                    "fieldname": "ReviewedBy",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Reviewed By",
+                        "InLineStyle": "font-weight: bold;",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "ReviewedBy"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "ReviewedBy",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "ReviewedBy",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 40,
+                    "varname": "ReviewedBy",
+                    "Display": "ReviewedBy",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ReviewedBy}ReviewedBy",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ReviewedBy}ReviewedBy",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"ReviewedBy\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"REVIEWEDBY\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"ReviewedBy\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Reviewed By\"\n\t.Column.Sort = \"ReviewedBy\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\n\n\n\n",
+                    "index": 4000
+                },
+                {
+                    "fieldname": "ReviewDate",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "Display": true,
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultDateOnlyFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Review Date",
+                        "InLineStyle": "font-weight: bold;",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "ReviewDate"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "Break after",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "ReviewDate",
+                    "type": "T",
+                    "DisplayFormat": "time(\"{grid.clientSideDateFormat}\",<value>)",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "ReviewDate",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "TimeStamp",
+                    "width": 17,
+                    "varname": "ReviewDate",
+                    "Display": "ReviewDate",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ReviewDate}ReviewDate ¶",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ReviewDate}ReviewDate ¶",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"ReviewDate\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"TimeStamp\"\n\t.nativeType = \"\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"REVIEWDATE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"Break after\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"ReviewDate\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Review Date\"\n\t.Column.Sort = \"ReviewDate\"\n\t.Column.InLineStyle = \"font-weight: bold;\"\nend with\n\n\n\n",
+                    "index": 4000
+                },
+                {
+                    "fieldname": "Note",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Note",
+                        "InLineStyle": "width: 5in; border-top:solid 1px #d0d0d0; padding-top:10px; padding-bottom:10px;",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Note"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "Note",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "Note",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 10,
+                    "varname": "Note",
+                    "Display": "Note",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Note}Note",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Note}Note",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Note\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"NOTE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Note\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Note\"\n\t.Column.Sort = \"Note\"\n\t.Column.InLineStyle = \"width: 5in; border-top:solid 1px #d0d0d0; padding-top:10px; padding-bottom:10px;\"\nend with\n\n\n\n\n",
+                    "index": 4001
+                }
+            ]
+        },
+        "field_index": 1,
+        "DetailView": {
+            "editable": true,
+            "LayoutColumns": 1,
+            "AddNewLinkLabel": "Add",
+            "SaveRecordButtonLabel": "Save",
+            "DeleteRecordButtonLabel": "Delete",
+            "AddRecordButtonLabel": "Add",
+            "Title": "Detail View ",
+            "show_row_labels": true,
+            "edit": {
+                "Execute_Update_Commands": true,
+                "allow_update": true,
+                "validateFieldsSetting": "Dirty Fields Only",
+                "updateWhichFields": "Dirty Fields Only",
+                "Number_Of_Insert_Rows": 1,
+                "cancel_button_text": "Cancel",
+                "close_button_text": "Close",
+                "save_confirm_before_submit_message": "Update record?",
+                "delete_confirm_before_submit_message": "Delete record?",
+                "add_confirm_before_submit_message": "Add record?",
+                "check_for_write_conflicts": true,
+                "write_conflict_check_type": 2,
+                "save_original_values": true,
+                "Delete_TargetPage": "<Self>",
+                "Save_TargetPage": "<Self>",
+                "Add_TargetPage": "<Self>",
+                "field_error_style": {
+                    "type": "Icon",
+                    "icon": "images/$$generic.error.png.a5image"
+                },
+                "RefreshRowMethod": "AutoSelect",
+                "row_errors_window_title": "Errors",
+                "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+                "FocusAfterFullPageRefreshForInsert": "First record",
+                "FocusAfterFullPageRefreshForUpdate": "Current page",
+                "FocusAfterFullPageRefreshForDelete": "Current page",
+                "Editable_GridRow_Options_Style": "Icons",
+                "RefreshRowOnDirty": true,
+                "RowEditStyle": "InitiallyEditable",
+                "LazyEdit": true
+            },
+            "OnlyShowOnRequest": true,
+            "HasCloseLink": true,
+            "CloseDetailViewLinkLabel": "Close",
+            "CloseAfterSubmit": true,
+            "CanClose": true,
+            "Toolbar": {
+                "Position": "Below",
+                "showRecordNavigatorLinks": true,
+                "Buttons": "<div style=\"padding-top:6px;\">\n\t{grid.detailView_part.deleteRecord}\n\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n\t{grid.detailView_part.cancelEdits}\n\t{grid.detailView_part.saveChanges}\n\t{grid.DetailViewActionButtonHTMLTemplate}\n</div>"
+            },
+            "UseSimpleStyles": true,
+            "SimpleStyleMode": "LayoutOnly",
+            "displayStyle": "PopupWindow-Modal",
+            "windowDragOpacity": 75,
+            "PopupWindowTitle": "Details",
+            "PopupWindowDirection": "ltr",
+            "OpenMethod": "Double-click on a Grid row",
+            "window": {
+                "animation": {
+                    "hasAnimation": true,
+                    "show": {
+                        "method": "Fade",
+                        "speed": "Slow"
+                    },
+                    "hide": {
+                        "method": "Fade",
+                        "speed": "Slow"
+                    }
+                }
+            }
+        },
+        "detailfields": {
+            "a_fields": [
+                {
+                    "fieldname": "ID",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Hidden",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "InLineStyle": "text-align: right;"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "InLineStyle": "text-align: right;",
+                        "Size": 11,
+                        "MaxLength": 11,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "Lookup": {
+                        "Type": "Grid Component"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "stylefieldiferror": true,
+                        "type": "Static",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "initial_value": "False",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "OpenMethod": "ClickIcon",
+                        "showDaysOfWeek": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "showTodayButton": true
+                    },
+                    "column": {
+                        "Hide": true,
+                        "heading": "ID",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Id"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "ID",
+                    "type": "N",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "ID",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "display": "ID",
+                    "varname": "ID",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.detailfield_info[_fieldNumber_]\n\t.Fieldname = \"ID\"\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Updateable = .t.\n\t.TreatBlankAsNull = .f.\n\t.Table_Alias = \"Suggestion\"\n\t.FieldToUpdate = \"ID\"\n\t.Varname = \"ID\"\n\t.Initial_Value = \"NULL\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Hidden\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .t.\n\t.BaseFieldExpression = \"ID\"\n\t.SourceAlias = \"\"\nend with\n\n\n",
+                    "DisplayOD": "{F=Tahoma,8}{I:''}{T=.2}{C=#130,130,130}{DATA=ID}ID",
+                    "DisplayODFlat": "{F=Tahoma,8}{I:''}{T=.2}{C=#130,130,130}{DATA=ID}ID",
+                    "PortableType": "Integer32",
+                    "onChange_ValidationOption": "None",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick"
+                },
+                {
+                    "fieldname": "Type",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "DropDownBox",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 30,
+                        "MaxLength": 50,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "Lookup": {
+                        "Type": "Grid Component"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "stylefieldiferror": true,
+                        "type": "Static",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "initial_value": "False",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "connection_type": "Access Database",
+                    "use_saved_connection_string": true,
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "choices": "Suggestion\nIncident Report\nEmployee Relations\n\n",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>",
+                        "flagIsDefined": true
+                    },
+                    "DatePicker": {
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "OpenMethod": "ClickIcon",
+                        "showDaysOfWeek": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "showTodayButton": true
+                    },
+                    "column": {
+                        "heading": "Type",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Type"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "Type",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "Type",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "display": "Type",
+                    "varname": "Type",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.detailfield_info[_fieldNumber_]\n\t.Fieldname = \"Type\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Updateable = .t.\n\t.TreatBlankAsNull = .f.\n\t.Table_Alias = \"Suggestion\"\n\t.FieldToUpdate = \"Type\"\n\t.Varname = \"TYPE\"\n\t.Initial_Value = \"NULL\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Static\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add to List\"\n\t.DropdownBox.Choices = <<%txt%\nSuggestion\nIncident Report\nEmployee Relations\n%txt%\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Type\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Type\"\n\t.Column.Sort = \"Type\"\nend with\n",
+                    "DisplayOD": "{F=Tahoma,8}{I:'$a5_control_combobox'}{T=.2}{C=}{DATA=Type}Type",
+                    "DisplayODFlat": "{F=Tahoma,8}{I:'$a5_control_combobox'}{T=.2}{C=}{DATA=Type}Type",
+                    "PortableType": "NationalVaryingCharacter",
+                    "onChange_ValidationOption": "None",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "index": 1000
+                },
+                {
+                    "fieldname": "Note",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "TextArea",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 10,
+                        "MaxLength": 10,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "Lookup": {
+                        "Type": "Grid Component"
+                    },
+                    "TextArea": {
+                        "rows": 8,
+                        "cols": 80,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "stylefieldiferror": true,
+                        "type": "Static",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "initial_value": "False",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "OpenMethod": "ClickIcon",
+                        "showDaysOfWeek": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "showTodayButton": true
+                    },
+                    "column": {
+                        "heading": "Note",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Note"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "Note",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Suggestion",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "Note",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "display": "Note",
+                    "varname": "Note",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.detailfield_info[_fieldNumber_]\n\t.Fieldname = \"Note\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Updateable = .t.\n\t.TreatBlankAsNull = .f.\n\t.Table_Alias = \"Suggestion\"\n\t.FieldToUpdate = \"Note\"\n\t.Varname = \"NOTE\"\n\t.Initial_Value = \"NULL\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextArea\"\n\t.Type = \"C\"\n\t.TextArea.Rows = 8\n\t.TextArea.Cols = 80\n\t.TextArea.InLineStyle = \"\"\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Note\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Note\"\n\t.Column.Sort = \"Note\"\nend with\n\n\n",
+                    "DisplayOD": "{F=Tahoma,8}{I:'$$control.textarea'}{T=.2}{C=}{DATA=Note}Note",
+                    "DisplayODFlat": "{F=Tahoma,8}{I:'$$control.textarea'}{T=.2}{C=}{DATA=Note}Note",
+                    "PortableType": "NationalVaryingCharacter",
+                    "onChange_ValidationOption": "None",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick"
+                }
+            ]
+        },
+        "detailViewToolbar": {
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "HasSearchPart": true,
+        "search": {
+            "HTML_Template_source": "Computed",
+            "title": "Search ",
+            "title_when_hidden": "Click here to search...",
+            "show_title": true,
+            "search_button_label": "Search",
+            "form_method": "Get",
+            "sorting_listbox_label_position": "Left",
+            "sort": {
+                "prompt": "Sort&nbsp;by",
+                "listbox": {
+                    "fieldname_prompt": "Select Field",
+                    "order_prompt": "Select Order",
+                    "order_choices": "Ascending,Descending"
+                }
+            },
+            "records_per_page_label_position": "Left",
+            "records_per_page": {
+                "prompt": "Records&nbsp;per&nbsp;page",
+                "listbox": {
+                    "value_prompt": "Select Value",
+                    "choices": "1,2,5,10,25,50,75,100"
+                }
+            },
+            "orientation": "Vertical",
+            "combine_criteria_using": 1,
+            "style": 2,
+            "allow_qbf_style": true,
+            "keyword_label": "Search for?",
+            "has_Clear_link": true,
+            "Clear_link_Label": "Clear Search Criteria",
+            "Clear_link_BubbleHelp": "Clear Search",
+            "TargetPage": "<Self>",
+            "InitialState": "Open",
+            "embedInGridPosition": "Above Titles",
+            "embedded": {
+                "hasFreeformLayout": true,
+                "showHideEmbeddedSearchIcon": "images/$$filter.png.a5image",
+                "showHideEmbeddedSearchBubbleHelp": "Show/hide the Search Part",
+                "showSearchIconsInRowSelector": true,
+                "searchIconBubbleHelp": "Search for records",
+                "clearSearchIconBubbleHelp": "Clear search criteria",
+                "searchIcon": "images/$$filter.records.png.a5image",
+                "clearSearchIcon": "images/$$filter.clear.png.a5image"
+            },
+            "embeddedStyle": "Free-form region for each column",
+            "toolbarPosition": "Below",
+            "savedSearches": {
+                "loadSearchPrompt": "Saved search to load:",
+                "saveSearchPrompt": "Name:",
+                "listboxHeading": "Existing Saved Searches",
+                "promptToLoadChoices": "Click to load choices...",
+                "loadButtonLabel": "Load",
+                "saveButtonLabel": "Save",
+                "cancelButtonLabel": "Cancel",
+                "listBoxHeight": "1in",
+                "dialogWidth": "2in",
+                "executeSearchOnLoad": true,
+                "saveSearchBubbleHelp": "Save search criteria",
+                "loadSearchBubbleHelp": "Load search criteria",
+                "warningBlankName": "You have not specifed a name.",
+                "warningDuplicateName": "Search not saved. Please specify a unique name."
+            }
+        },
+        "searchToolbar": {
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "searchFields": {
+            "a_fields": [
+                {
+                    "controltype": "DropDownBox",
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "TextBox": {
+                        "Size": 40,
+                        "MaxLength": 200,
+                        "stylefieldiferror": true
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "css": "",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add To List if Not Null",
+                        "orientation": "Horizontal",
+                        "stylefieldiferror": true,
+                        "type": "Static",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add To List if Not Null",
+                        "orientation": "Horizontal",
+                        "initial_value": "False",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "connection_type": "Access Database",
+                    "use_saved_connection_string": true,
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "choices": "Suggestion\nIncident Report\nEmployee Relations\n",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add To List if Not Null",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>",
+                        "flagIsDefined": true
+                    },
+                    "DatePicker": {
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "OpenMethod": "ClickIcon",
+                        "showDaysOfWeek": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "showTodayButton": true
+                    },
+                    "column": {
+                        "heading": "Suggestion Type",
+                        "sort": "Type",
+                        "LabelPosition": "Above",
+                        "canSort": true
+                    },
+                    "initial_value": "NULL",
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "type": "C",
+                    "display": "Type",
+                    "TableAlias": "Suggestion",
+                    "updateable": true,
+                    "table": "Suggestion",
+                    "FieldToUpdate": "Type",
+                    "varname": "Type",
+                    "fieldname": "Type",
+                    "BreakType": "None",
+                    "DisplayOD": "{F=Tahoma,8}{I:'$a5_control_combobox'} {C=}{DATA=Type}Type",
+                    "DisplayODFlat": "{F=Tahoma,8}{I:'$a5_control_combobox'}{T=.2}{C=}{DATA=Type}Type",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_combobox'} {C=}{DATA=Type}Type",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "scope": "Local",
+                    "conditionalStyleLevel": "Cell",
+                    "clientSideconditionalStyleLevel": "Cell",
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "lookup": {
+                        "type": "Edit-Combo List"
+                    },
+                    "nCols": 1,
+                    "BaseFieldExpression": "Type",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.searchfield_info[_fieldNumber_]\n\t.Fieldname = \"Type\"\n\t.SearchExpression = \"Type\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"TYPE\"\n\t.Column.LabelPosition = \"Above\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Static\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropdownBox.Choices = <<%txt%\nSuggestion\nIncident Report\nEmployee Relations\n%txt%\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Type\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Suggestion Type\"\nend with\n\n",
+                    "canBeUsedInWhereClause": true,
+                    "PortableType": "NationalVaryingCharacter",
+                    "onChange_ValidationOption": "None",
+                    "repeatingSectionParentId": -1,
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "SearchExpression": "Type",
+                    "index": 4000
+                }
+            ]
+        },
+        "searchField_index": 1,
+        "eventIndex": 1,
+        "activeLanguage": "<Default>",
+        "LayoutColumns": 1,
+        "DetailLayoutColumns": 1,
+        "style_name": "NDDIBlue",
+        "PreCalcMode": "Standard",
+        "FontSize": "Medium",
+        "style_type": "Alpha Five",
+        "useCompactTheme": true,
+        "overrideStyleName": "Default",
+        "resolveAbstractClassNames": true,
+        "alternate_bands": true,
+        "odd_band_size": 1,
+        "even_band_size": 1,
+        "odd_column_band_size": 1,
+        "even_column_band_size": 1,
+        "rows": 10,
+        "maxRowsPerPage": 200,
+        "rowsWhenSearchActive": -1,
+        "suppress_empty_rows": true,
+        "has_row_separator": true,
+        "show_column_titles": 1,
+        "suppress_titles_if_no_records": true,
+        "show_row_labels": true,
+        "sort_style": 3,
+        "reset_page_number_when_sorting": true,
+        "RepeatingColumns": 1,
+        "snaking": "TBLR",
+        "total_records_row_position": 1,
+        "total_records_row": "Records:&nbsp; {Total_Records}&nbsp;",
+        "grid_layout_style": 1,
+        "grid_layout_template_computation_method": "Automatic",
+        "No_records_message": "<table border=\"0\" cellpadding=\"20\" cellspacing=\"1\"><tr><td>&nbsp;<font style=\"font-size:14pt; font-weight:bold;\">There are no records on file...</font></td></tr></table>",
+        "Show_Add_Records_Confirmation_Message": true,
+        "summary": {
+            "total": {
+                "label": "Total",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "count": {
+                "label": "Count",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "average": {
+                "label": "Average",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "min": {
+                "label": "Minimum",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "max": {
+                "label": "Maximum",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "StdDev": {
+                "label": "Std. Dev.",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "Var": {
+                "label": "Variance",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "First": {
+                "label": "First",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "Last": {
+                "label": "Last",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "RowOrder": "Total,Count,Average,Min,Max,StdDev,Var,First,Last",
+            "ShowOnLastPageOnly": true,
+            "repeatColumnHeadingAboveSummaryValues": false
+        },
+        "NewRecordsTitle": "<tr><td class=\"[class.gridData]\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" >New Records</td></tr>",
+        "ExistingRecordsTitle": "<tr><td class=\"[class.gridData]\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" >Existing Records</td></tr>",
+        "row_separator": "<tr><td class=\"{a5_style}SeparatorTD\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" ></td></tr>",
+        "hasRecordsPerPageSelector": true,
+        "RecordsPerPageChoices": "5,10,15,25,50,75,100",
+        "RecordsPerPageSelectorTemplate": "&nbsp;&nbsp;{Grid.RecordsPerPageSelector} Records per page",
+        "alphabet_button": {
+            "style": "Hyperlink",
+            "has_ALL_option": true,
+            "ALL_Label": "All",
+            "alignment": "Left",
+            "SearchBarType": "Alphabet Buttons"
+        },
+        "qbe": {
+            "menu_internationalization": "None",
+            "initial_display": "Hidden",
+            "toggleQBERowHyperlinkText": "Show/Hide QBE Row"
+        },
+        "SimpleStyleMode": "FieldsOnly",
+        "RowExpand": {
+            "ExpandMethod": "Click icon",
+            "Type": "LinkedContent",
+            "WorkingMessage": "<div style=\"width: 4in; height: .5in\">\n\t<img src=\"css/A5System/Images/wait.gif\" /> Working...\n</div> \n",
+            "Mode": "Single"
+        },
+        "linkedContent": {
+            "lockWindowText": "<div style=\"padding: 5pt;\"><img style=\"vertical-align:middle;\" src=\"css/A5System/Images/wait.gif\" /> Please wait...</div>",
+            "lockWindowClassName": "A5WindowLock"
+        },
+        "CheckboxSelectType": "SinglePage",
+        "MasterTemplateStyle": "Table - Vertical Layout",
+        "MasterLayout": {
+            "PaneLabel": {
+                "Search": "Search",
+                "Grid": "Grid",
+                "DetailView": "Detail"
+            },
+            "AccordionStyle": "Multiple",
+            "InitialOpenPanes": "Search,Grid,DetailView"
+        },
+        "verticalAlignDataInColumns": "Middle",
+        "CollapseBar": {
+            "Title": "Collapse Grid",
+            "InitialState": "open"
+        },
+        "honorDBFFieldRules": true,
+        "languageTags_RemoveUnConsumedTags": true,
+        "onlyIncludeSelectedFieldsInQuery": true,
+        "flagAddPKToORDER": true,
+        "saveFileType": "Formatted JSON",
+        "captureJSErrorStackTrace": false,
+        "datePicker": {
+            "dayNames": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            "monthNames": "January,February,March,April,May,June,July,August,September,October,November,December",
+            "firstDayOfWeek": 1,
+            "todayButtonText": "Today",
+            "closeButtonText": "Close"
+        },
+        "gridToolbar": {
+            "ExportButtonIcon": "images/$$application.ms.excel.png.a5image",
+            "ExportButtonHelp": "Export data in Grid to Excel",
+            "ExportButtonFormat": "Excel-XLSX",
+            "ExportButtonMaxRows": "10000",
+            "exportHiddenColumns": true,
+            "exportUseColumnHeadings": true,
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "helpTableType": "DBF",
+        "fieldHelpWindowStyle": "modal-resizeable",
+        "autoRefreshInterval": 60,
+        "genericDataStoreTableType": "DBF",
+        "RecordNavigationStyle": "NavigationButtons",
+        "fetchMoreRecordsButton": {
+            "text": "More Records"
+        },
+        "namedLayout": {
+            "selectorPosition": "AboveGrid"
+        },
+        "scrollableRegionHeight": "2in",
+        "scrollableRegionWidth": "100%",
+        "defaultColumnWidth": "1in",
+        "RecNav": {
+            "HTML_Template_source": "Computed",
+            "Position": 1,
+            "Show_disabled_controls": true,
+            "Show_Page_Count": true,
+            "Page_Numbering_Style": 3,
+            "PagesTemplate_w_PageCount": "{PageNumber} of {PageCount}",
+            "PagesTemplate_wout_PageCount": "{PageNumber}",
+            "Has_First_Button": true,
+            "Has_Prev_Button": true,
+            "Has_Next_Button": true,
+            "Has_Last_Button": true,
+            "Number_of_page_links": 10,
+            "First_Label": "First",
+            "Prev_Label": "Prev",
+            "Next_Label": "Next",
+            "Last_Label": "Last",
+            "Justify": "Left",
+            "SuppressIfOnlyOnePage": true,
+            "First_on_Image_name": "{css_path_reference}/{a5_style}/FirstOn.png",
+            "First_off_Image_name": "{css_path_reference}/{a5_style}/FirstOff.png",
+            "Prev_on_Image_name": "{css_path_reference}/{a5_style}/PrevOn.png",
+            "Prev_off_Image_name": "{css_path_reference}/{a5_style}/PrevOff.png",
+            "Next_on_Image_name": "{css_path_reference}/{a5_style}/NextOn.png",
+            "Next_off_Image_name": "{css_path_reference}/{a5_style}/NextOff.png",
+            "Last_on_Image_name": "{css_path_reference}/{a5_style}/LastOn.png",
+            "Last_off_Image_name": "{css_path_reference}/{a5_style}/LastOff.png"
+        },
+        "edit": {
+            "Execute_Update_Commands": true,
+            "allow_update": true,
+            "allow_insert": true,
+            "number_of_insert_rows": 1,
+            "allow_delete": true,
+            "validateFieldsSetting": "Dirty Fields Only",
+            "delete_checkbox_label": "Delete",
+            "delete_checkbox_label_position": "Left",
+            "delete_checkbox_allowDeleteAll": false,
+            "cancel_button_text": "Cancel",
+            "submit_button_text": "Submit",
+            "confirm_before_submit_message": "Save changes?",
+            "check_for_write_conflicts": true,
+            "write_conflict_check_type": 2,
+            "save_original_values": true,
+            "TargetPage": "<Self>",
+            "field_error_style": {
+                "type": "Icon",
+                "icon": "images/$$generic.error.png.a5image"
+            },
+            "RefreshRowMethod": "FullPage",
+            "Editable_GridRow_Options_Style": "Icons",
+            "RefreshRowOnFocus": true,
+            "RefreshRowOnDirty": true,
+            "row_errors_window_title": "Errors",
+            "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+            "RowEditStyle": "AllRows",
+            "NewRecordsEditStyle": "ShowOnDemand",
+            "NewRecordsButtonLabel": "Add",
+            "DeleteRecordControl": "Checkbox",
+            "HasRowStatusColumn": true,
+            "OneEditableRowAtATime": true,
+            "LazyEdit": true
+        },
+        "ValidationSettingsErrorTemplate": "Field '{Fieldlabel}', Value '{Value}' : {Error}",
+        "ValidationSettingsMessage": "Click the 'Back' button and correct the errors.",
+        "ValidationErrorsRowColumnTitle": "Row",
+        "ValidationErrorsErrorColumnTitle": "Error",
+        "OnlyValidateEditedFields": true,
+        "AddNewRecordRowsPosition": "Bottom",
+        "autoNumberColumnLabel": "Auto",
+        "QuickSearch": {
+            "QuickSearchPosition": "In Grid",
+            "QuickSearchAlign": "Left",
+            "ControlType": "Textbox",
+            "AutoSubmit": true,
+            "Label": "Search for:",
+            "SearchButtonLabel": "Search",
+            "AllowQBFStyleSearch": true,
+            "SearchStyle": "Wildcard",
+            "Height": 1,
+            "SelectStyle": "Single",
+            "Size": 20,
+            "MaxLength": -1,
+            "Orientation": "Horizontal",
+            "choices": {
+                "type": "Static",
+                "datasource": "DBF-Table"
+            },
+            "connection_type": "Access Database",
+            "HasShowAllButton": true,
+            "ShowAllButtonLabel": "All"
+        },
+        "info": {
+            "createdBy": "jdusoe",
+            "LastUpdatedBy": "Administrator",
+            "DateUpdated": "03/26/2018 07:19:16 97 pm",
+            "DateCreated": "04/28/2017 09:43:32 16 am"
+        },
+        "BuilderVersion": 2,
+        "current_pane_tree": "Search.Fields",
+        "embeddedMode": false,
+        "_style_versionNumber": -1,
+        "AjaxOn": true,
+        "fpInstalled": "QoKgoySniCzPGskZSTngR3G9Ctug7BRBvYDjPHZS4pgWNzbNrKLkPhWCepZxLrtwpiXMBIK0Vx0n5a7J0Rw7UcjK8XuaGaG4W2I4+4n17vjYP2TWMx+zoaTv8LtEmOzJ5oNi3h0n4wVjW3gUIKBi67UOQ0D2ffcn1YoiZjuRyLgj41hmvo+Fw3iEP3wuYZYwE564foce+NUjxEE0Sux+yTkpFwum2noANGZHT+T19A36ZZuBwNNt85v8CbYOBdWymSJ6lysqBWdOt/2IbXA7FjpqiRS8SjCEOVuAJQd/doxfhbR8cqirIW6t4C945XJX4qP+Wx4Fkz5W1HJg5vURAU8/y0YiKMMSkfZaJC/UMWzm7PTwWgeCKL2Q6kzKReITHbKdlWgEVdiSo678FsA2U3yjVweFvpZedbKCy9kggHuQtXRgYsfnGJeRZzTD5CzltVO3DK246//wdM8pkdt3SZ4ooNi43E+Itrn4J/c0+w+eOxjXlIDd91XGcD+aU+8cH1qtPeoRzrYgjRGbhh0HadsOrmfXeza3MFM4ZSGXRxl4BtSUIzP77nNWRkR2833f0PdZ11UvJ0mBJpZCk3BJLYsnJi2KvDjwXmZwZhOtjpdANVPcR8vNr3LU3ISB9J2qcyRygQJRCMKzkpiMXF8f6dY0Mt3fW9gTZN+qLMp6h55f5XOUuEnjFBszPrPwTJlXT7M/wkj2WME19GHINPk8ppRL3bhOW9zr8o8iCwXenx6XbF8mSRpZum+YcQFHMPXkd2Gzs+qsIkoPKcbqPtRSk09uiZq0ZilRb8v/Bxtd9UbFJZm6rcjdnl/79I+Q7k/TUOtHO6b3DpqVWsnQfjR3LnMIwjS7Cy1hRoGFJBkXrsbTugqMFFeUpUIxX6qNfH6VUXOtYOjcVLhXATLRJrTfMwPZmw2kv1AaitpujY/nkm+SO1wK0v6ggNiWbnEok9MX/7ZTXGdl179EPh3vA9GjojTB94gRud+f8Tc/KD37P5o4GQoADFfn2HYWmxpUt3onhdp4Z11tKQfaHGa3uSP33Vh2UcDX9qYsAJw/NLhYmYxsKFkSGIJTnBuJ3eVhvBK+A2V95tUZoJ+pRkLjcB1m45AJCe/QkcLSKKEAJhmsh0DfKNMS9d7q5R1U0FcxMLEAZR54O+4+uUhcoNwbKzrinCC4FJQAhtrsXskVw6LYvSY0DQKsC7qHH9UURIEpfZiksKmytwOoBzgH3emeOHXfIjRqDh97Hkwol/CGgFkA4YeZnkJWiOORkhnEQAi+p7MtIj5dX3N5V+ogAv0JI1Bt4ilI/fUOu228MgwohEvhg/CPNl438sQ4YwepOJM8eegljcMYTse+T+W96aDilMaPj43ZJYbp2icpqbJ9o4k6SLAjWQXA8tRdaxW8j6VPfqlS+g5COIeGwDKCK8Mv9lZa5N2A2eQ3P0gJ6PiUHjd6BOkV9CGm0mnRV14TVWDd3YkfdLoGuuFui8qtFQMvyuUSlaX9T+EgM/ow3yinfk6aqpj0UBP4LC6KLkoBEs8smJPGfH98lIhS2Uznm7aczP0rc6NDq9lNCJU2lGRLvp/JfdtZ//tLIvoiSeaWUWp5uNwkdKTn2iJRurJEVdSz3flxKNmur6TRUwKjHAzGKDFZrCr2Cyew7CAtWcVG9EGRtrKyozEJVx/oR6e8gm6E23G1/wEJPMnoS7FpZsIohaSwLtQ/rVHac8oPDc/bWj5UdPpAZL7xnygmas560yNWO5vprW4s/ULG0pmboaNXu8zb9ACnABbUR60Mg3llBfYKLUw2tYwBbdSM+xzir3mTA8iHavfhXfPx/fySAMwAvmpPrXIcLa4T5P4X7x3h2ShGNmW5Dfu3UWwofAHVuZLRgydt/L/brJdmtdoBbs2k2zTrZv3cHIBSXEDUcPrGA9vwBLHLmA3n7gF+Aet4N0rfaxC9cl26aJ8xg8gHCSagmDr/jWhtqdBwGTp7dtgMGUnr2xval/s2ZIFbUQIfXTAw5VgZ0cm8UV59RfXHvLd3MHP7KBE02e/nS4lW2trS3BczxJtjiEVo2h7tAUDto8TXaTqhRVgxHyWz9x6LKpjh408ocr8drcmxMiJ+h/R+2xBWs7/wRpnVdV7mMbWCEnYUIW47RFLZ30++FYW1aNs0EyuDB6t8D6S8tKvAAd1Prfp1ApEEKFwAHiW/2Omgf7MSqaovpzTC9sWD7gZaU0Hvdl46XsVCJX+ZTvsZfhAuv7cq+pWmZ37nEVwnmJIu8vokO7U3QSBEhcFnIxEeswkXsOrhFKHbJR81H7qWBYaGC4pAVbOLZJpI94VWoO2/zbRWml8DiSBbD+/PnFQZS3HgrmwFpWqW327jpG+2THS1zOi1DHfD4vS75hwDluO24pR4F2itRmsT3VJpTFE9fGxt995RhTKtfMy+VwEojXU6VivUUP+fZxgcWLWQE7G/BVG53fkLEkx0RFBupfbLVQGRxO1Cp/nMw5JH9T80P3rCaT2/pco1Te/VbcvBBjZnMOBDpeY9nQVF6iAuVGMbM6mhCdey9Xw4PzKQidHoRowQxteDlWrFC5tTELmRnMrEJFpe/npVni5x93MNUU+WPfTl+WwEL6gBKYXMns+TX0aF+WbI8Wvk4Jtn6HI0VQYqwsLLUAjot2Ik2k8DTw3kt1RjYUmXyH6uFNeE7GELj/mwCCX4Sjp9ILRU5oJ4f2Rul/VoLHUxU3YRm+MrhQ+GXoG9E3V5kPuyxe85308nW5OVjyJDsW0ftqHLfck1KjAe8Z/1awG17EJJoxw30dw7HCJiwaj4zj0ipss3vSVWSP98nqt3c3uWfyMlYWq3oGtC3JV2J2JtApHDzLK+AXkKFoX351qLBSXNJ8vxP/6/TLkRxWI8WlDDgQDh50tEZey5GCFbrTcvtCRgH+CfnoWiU4KbW1VeAbl9v/B2XbBGbucA6TaApr222u+XR7nxtCNo7QBWrXZXx9ZtImL5ww7uf28ECHuFJKi81zKjmZ/m794ppvMW9lX6eDPs7aDWHx7NQfz84OP0CvPwa431oaCT/d8lKxqOCdCgdEO5zan3FL7B5F7sC9J4P7zcvfiLBkjmSLxw9zDWCfJhLWTqL3dzO2nJRnhLxTr+IVSSe5PvmnCkM0p8vHC7ObBrrmhDDOJQQzHkUW1n1wPxxh65zpsuOad13S/tS8HW6pOA2sMQASzBgiIlHmMOR3Z8V/3/3ZfRe6OWhmrXgKcS3CnuQy4P4p5gkrkZ4b67+DUvSI8P4qTDvEtVU7mfdx+Dl80DPKBzoe+TWOZ+XTsFrFjRff5mL2gzkF+TIL0CvruUQ9nT9BUe+w449nyJrB+fh+xp+gxETRaTWbUp7okUK8U77LVISUIkit5PtNs=",
+        "componentFilename": "C:\\a5\\projects\\HRManager\\HRManager.WebProjects\\default.WebProject\\SuggestionBox.a5wcmp",
+        "PAliases": {
+            "alias": "[PathAlias.ADB_Path]\n",
+            "alias_expanded": "C:\\a5\\projects\\HRManager\n",
+            "alias_aliasExpanded": "[PathAlias.ADB_Path]|C:\\a5\\projects\\HRManager"
+        },
+        "_row_onHover": true,
+        "ADB_PATH": "C:\\a5\\projects\\HRManager",
+        "EXE_PATH": "C:\\Program Files (x86)\\a5V12",
+        "VersionNumber": 4,
+        "__wphostname": "Chrome",
+        "A5SaveTimeStamp": "20180326191917029"
+    }
+}

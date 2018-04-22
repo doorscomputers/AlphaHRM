@@ -1,0 +1,39 @@
+<%a5
+dim cf_1 as extension::CurlFile
+dim flag_1 as l
+dim post1[0] as p
+
+post1[].copyname =  "from"
+post1[].copycontents =  "Mailgun Sandbox <postmaster@sandbox800c74b6a579470ab656bc7798045099.mailgun.org>"
+post1[].end = .t.
+post1[].copyname =  "to"
+post1[].copycontents =  "Jim Dusoe <jdusoe@nddi.net>"
+post1[].end = .t.
+post1[].copyname =  "subject"
+post1[].copycontents =  "Hello Jim Dusoe"
+post1[].end = .t.
+post1[].copyname =  "text"
+post1[].copycontents =  "Congratulations - you sent an email"
+dim ce as extension::Curl
+
+ce = extension::Curl.Init()
+ce.setOpt("URL","https://api.mailgun.net/v2/sandbox800c74b6a579470ab656bc7798045099.mailgun.org/messages")
+ce.setOpt("NOPROGRESS",1)
+ce.setOpt("USERPWD","api:key-395a6dfe0678f18770426f49e6ea88ef")
+ce.setOpt("HTTPPOST",post1)
+ce.setOpt("USERAGENT","curl/7.34.0")
+ce.setOpt("MAXREDIRS",50)
+ce.setOpt("CAINFO",a5.Get_Exe_Path()+"\caroot\ca-cert.pem")
+ce.setOpt("CAPATH",a5.Get_Exe_Path()+"\caroot")
+ce.setOpt("SSH_KNOWNHOSTS","C:\Users\jdusoe\AppData\Roaming/_ssh/known_hosts")
+ce.setOpt("TCP_KEEPALIVE",1)
+ce.SetOpt("FILE",cf_1)		
+flag_1 = ce.Exec()
+if flag_1 then
+     showvar( "Headers: "+crlf()+cf_1.GetHeaders()+crlf()+"Content:"+crlf()+cf_1.GetContent())
+else 
+	 showvar("error: " + ce.Error() )
+end if
+ce.close()
+%>
+Done...

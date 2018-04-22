@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="Alpha Anywhere HTML Editor Version 12 Build 2684-4438">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title></title>
+</head>
+<body>
+
+
+<%a5
+callbackstr = ""
+
+if variable_exists("price")
+	callbackstr = callbackstr + "Message Receipt" + crlf()
+else
+	callbackstr = callbackstr + "Incoming Message" + crlf()
+end if
+
+
+
+if variable_exists("msisdn")
+	callbackstr = callbackstr + msisdn + crlf()
+end if
+if variable_exists("NetworkCode")
+		callbackstr = callbackstr + NetworkCode + crlf()
+end if
+if variable_exists("to")
+		callbackstr = callbackstr + to + crlf()
+end if
+if variable_exists("messageId")
+		callbackstr = callbackstr + messageId + crlf()
+end if
+if variable_exists("Price")
+		callbackstr = callbackstr + price + crlf()
+end if
+if variable_exists("Status")
+		callbackstr = callbackstr + Status + crlf()
+end if
+if variable_exists("SCTS")
+		callbackstr = callbackstr + SCTS + crlf()
+end if
+if variable_exists("err-code")
+		callbackstr = callbackstr + err-code + crlf()
+end if
+if variable_exists("text")
+		callbackstr = callbackstr + text + crlf()
+end if
+if variable_exists("type")
+		callbackstr = callbackstr + type + crlf()
+end if
+if variable_exists("messsage-timestamp")
+		callbackstr = callbackstr + messsage-timestamp + crlf()
+end if
+
+fname = "SMS_" + remspecial(api_uuidcreate()) + ".txt"
+
+file.from_string("c:\alpha debug\\" + fname,callbackstr)
+
+Response.StatusCode = 200
+
+
+%>
+</body></html>

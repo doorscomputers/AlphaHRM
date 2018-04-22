@@ -1,0 +1,182 @@
+<%A5
+'This part of the .A5I page is generated dynamically based on the Application Variables, 
+'Aliases and Connection Strings specified in the Profile that was selected when the Web project was published.
+
+'Note about Application Variables
+'Because the Application Variables are dimmed as Global, they can be seen inside all functions
+'in the code contained in an .A5W page
+
+
+'----------------------------------Application Variables ----------------------------------------------------------------------
+'No Application Variables have been defined
+
+'----------------------------------Aliases ----------------------------------------------------------------------
+
+Dim _aliases_ as c
+_aliases_ = <<%txt%
+[PathAlias.ADB_Path]|undefined
+%txt%
+
+'Creates a global collection called '_A5_Aliases' 
+'At run-time, your Xbasic scripts can lookup an alias as follows:
+'myAlias = _A5_Aliases.get("myAliasName")
+DIM global _A5_Aliases as U
+_A5_Aliases = makeAliasCollection(_aliases_)
+
+
+
+'-----------------------------------AlphaDAO Connection Strings ----------------------------------------------------------
+'This is a CR-LF delimited list of AlphaDAO connection strings.
+'Connection strings are encrypted. If you want to edit a connection string shown here, you can enter
+'an unencrypted connection string by ommitting the 'Encrypted:' prefix.
+
+Dim _AlphaDAO_ConnectionStrings as c 
+_AlphaDAO_ConnectionStrings = <<%txt%
+SQL|Encrypted:3MLNR/D8BLbOLVyV2vnymlT4970fFMs7f75fDdfEcUW8NybBUh1UErXoO5kRD5i2TarUSMS/PUDVUmkhPYq0wJVs2RPbbsDJw24B7GMaL8IEwv3PgX5PtyrTL9rg+l/AiiSu5MQG74WxVmx5tNZz0/EHL8T59Tt0CQ9NJMy0UQexUDR14Hp63+70VeTBvphONBxzOYktX1/ZOxaEWj9D9Lgq9sx+bTku6iSfZhX3aDY=
+%txt%
+
+'Create a global collection called '_A5_AlphaDAO_ConnectionStrings'
+'At run-time, your Xbasic scripts can lookup a connection string as follows:
+'myConnectionString = _A5_AlphaDAO_ConnectionStrings.get("myConnectionStringName")
+
+DIM global _A5_AlphaDAO_ConnectionStrings as U
+dim gv as p 
+gv = global_variables()
+_A5_AlphaDAO_ConnectionStrings = loadConnectionStrings(gv, _AlphaDAO_ConnectionStrings, "AlphaDAO")
+
+
+
+'-----------------------------------Web Project Properties ----------------------------------------------------------
+'This code loads Project Properties. At runtime, your Xbasic code can read Project Properties as follows:
+'dim projProp as p
+'projProp = a5_getWebProjectProperties()
+
+
+dim _webProjectProperties as c 
+_webProjectProperties = <<%txt%
+DIM aexFiles as P
+DIM aexFiles.fileNames as C = <<%str%
+jqcalendar.aex
+HRManager.aex%str%
+DIM fileDownload as P
+DIM fileDownload.allowedFilenamePatterns as C = "*.xls*,*.pdf,*.jpg,*.jpeg,*.bmp,*.png,*.rtf,*.pdf,*.txt"
+DIM fileDownload.allowedFolderPatterns as C
+DIM fileDownload.blockedFilenamePatterns as C = "*..exe,*..com,*..bat,*..dat,*..mdf.,*..dbf"
+DIM reportServer as P
+DIM reportServer.disable as L
+DIM projectStyle as C = "Alpha"
+DIM useMicrosoftXPSPrinterForPDF as L
+DIM convertXPSToPDF as L = .T.
+DIM jsLibraries as P
+DIM jsLibraries.jQueryCore as C = "Load Internal Version"
+DIM jsLibraries.jQueryUI as C = "Load Internal Version"
+DIM jsLibraries.links as C
+DIM jsLibraries.includeImageGallery as L
+DIM jsLibraries.includeGoogleJSAPI as L
+DIM jsLibraries.jQueryCoreVersion as C = "1.6.2"
+DIM jsLibraries.jQueryUIVersion as C = "1.8.16"
+DIM jsLibraries.cordova as P
+DIM jsLibraries.cordova.loadFrom as C = "BuiltIn"
+DIM jsLibraries.includeCKEdit as L
+DIM cssLibraries as P
+DIM cssLibraries.links as C
+DIM cssLibraries.jQuery as C = "No Theme"
+DIM email as P
+DIM email.smtp_server as C = "smtp.mandrillapp.com"
+DIM email.smtp_username as C = "jdusoe@nddi.net"
+DIM email.smtp_password as C = "btlcry4688"
+DIM email.smtp_port as C = "587"
+DIM email.smtp_SSLOption as C
+DIM email.from as C = "jdusoe@nddi.net"
+DIM email.from_alias as C = "HRM"
+DIM email.mandrillKey as C = "MEnYUARgpBNZEWDeVoqV9w"
+DIM email.outbox as P
+DIM email.outbox.tableType as C = "SQL"
+DIM email.outbox.connectionString as C = "::Name::SQL"
+DIM email.outbox.tableName as C = "Mandrill"
+DIM email.outbox.fieldmap as C
+DIM email.outbox.sequenceName as C
+DIM email.sparkPostKey as C
+DIM repository as P
+DIM repository.tableType as C = "SQL"
+DIM repository.connectionString as C
+DIM repository.tableName as C
+DIM repository.fieldmap as C
+DIM workQueue as P
+DIM workQueue.tableType as C = "SQL"
+DIM workQueue.connectionString as C
+DIM workQueue.tableName as C
+DIM workQueue.fieldmap as C
+DIM helpTable as P
+DIM helpTable.tableType as C = "SQL"
+DIM helpTable.connectionString as C
+DIM helpTable.tableName as C
+DIM helpTable.fieldmap as C
+DIM textDictionary as P
+DIM textDictionary.tableType as C = "SQL"
+DIM textDictionary.connectionString as C
+DIM textDictionary.tableName as C
+DIM textDictionary.fieldmap as C
+DIM applicationGlobalVariables as C
+DIM calendar as P
+DIM calendar.license as C = "NDE2MTN2dXYsYG5xamBqc28vYW5v"
+DIM css as P
+DIM css.webkit as P
+DIM css.webkit.AllowSelectionOfText as L = .T.
+DIM NamedResources as C
+DIM siteDefaults as P
+DIM siteDefaults.guessedDefaultPage as L = .T.
+DIM siteDefaults.defaultpage as C = "index.a5w"
+DIM siteDefaults.sessionTimeout as N = 20
+DIM siteDefaults.maxUploadSizeMB as N = 100
+DIM PDFPrintTimeout as N
+DIM PDFPrintTimeoutMessage as C
+DIM HTMLReportOffload as L
+DIM datasynclogtable as P
+DIM datasynclogtable.tableType as C = "SQL"
+DIM datasynclogtable.connectionString as C
+DIM datasynclogtable.tableName as C
+DIM datasynclogtable.fieldmap as C
+DIM stripe as P
+DIM stripe.keysJSON as C
+DIM reportEvents as P
+DIM reportEvents.afterPrint as C
+DIM reportEvents.library as C
+DIM reportEvents.beforePrint as C
+DIM useDirectPdf as L
+DIM useBSONforSQLreporting as L = .T.
+DIM PDFOptions as C
+DIM googleMapsAPIKey as C
+DIM googleStaticMapsAPIKey as C
+DIM websocket as P
+DIM websocket.enable as L
+DIM websocket.longpolling as L
+DIM websocket.port as C
+DIM websocket.using as C = "Simple"
+DIM websocket.redis_url as C
+DIM websocket.redis_host as C
+DIM websocket.redis_port as C
+DIM debugger as P
+DIM debugger.allow as L
+DIM transform as P
+DIM transform.enable as L
+DIM transform.settingsJSON as C
+%txt%
+
+dim gv as p 
+gv = global_variables()
+a5_loadWebProjectProperties(gv,_webProjectProperties)
+
+dim gv.__buildNumberExe__ as n 
+dim gv.__buildNumberAddins__ as n 
+dim gv.__guid as c 
+dim gv.__A5PublishVersion as n 
+gv.__A5PublishTimestamp = 2018222221152210878
+gv.__buildNumberExe__ = 4770
+gv.__buildNumberAddins__ = 5018
+gv.__guid = "41ad4290-e745-4b5d-8dd8-0e497e5bf99d"
+gv.__control = <<%txtcontrol%
+hV7+2zUTjP0=
+%txtcontrol%
+
+%>

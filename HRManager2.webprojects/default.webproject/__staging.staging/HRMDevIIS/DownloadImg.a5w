@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<%a5
+'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE - 'PAGE FORMAT:V10
+dim componentAlias as c
+'The componentAlias MUST be UNIQUE for each component on the page. ComponentAlias may not have spaces. Keep the name as short as possible.
+componentAlias = "DowmloadIm"
+Delete tmpl
+DIM tmpl as P
+tmpl = a5w_load_component("DowmloadImg") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:DowmloadImg)
+'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+tmpl.override_settings = <<%override_settings%
+	componentName = componentAlias
+	_gridFilename = "DowmloadImg"
+%override_settings%
+'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+'	dim pageVar as p
+'	pageVar.gridRowCount = 10
+'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+'	rows = pageVar.gridRowCount
+'Resolve session and page variables in the override_settings string.
+a5w_resolveVariablesInOverrideSettings(tmpl,session,local_variables())
+delete x_out
+dim x_out as p
+x_out = a5w_run_Component(tmpl) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:DowmloadImg)
+if x_out.RedirectURL <> "" then 
+	response.redirect(x_out.redirectURL)
+	end
+end if 
+?x_out.Output.Head.JavaScript
+?x_out.Output.Head.CSS_Link
+%>
+
+<title>DowmloadImg</title>
+</head>
+
+<body class="NDDIBluePage">
+
+
+<!-- Any text that you want to output above the component goes here-->
+	<%A5 ?x_out.Output.Body.Search_HTML %>
+	<%A5 ?x_out.Output.Body.Grid_HTML %>
+	<%A5 ?x_out.Output.Body.DetailView_HTML	%>
+</body>
+</html>

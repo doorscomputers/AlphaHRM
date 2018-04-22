@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<script src="ckeditor/ckeditor.js"></script>
+<head>
+
+
+<%a5
+Delete tmpl_DocEditor
+DIM tmpl_DocEditor as P
+tmpl_DocEditor = a5w_load_component("DocEditor") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:DocEditor)
+
+'Override settings start -----------------------------------------
+with tmpl_DocEditor
+.alias = "DocEditor"
+_dialogFilename = "DocEditor"
+end with 
+'Override settings end -----------------------------------------
+
+delete x_DocEditor
+dim x_DocEditor as p
+x_DocEditor = a5w_run_Component(tmpl_DocEditor) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:DocEditor)
+
+?x_DocEditor.Output.Head.JavaScript
+?x_DocEditor.Output.Head.CSS_Link
+
+?x_DocEditor.Output.Head.Title 
+%>
+
+
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files (x86)/a5V12/css/NDDIBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+</head>
+
+
+<body class="NDDIBluePage">
+
+
+
+
+<%a5 ?x_DocEditor.Output.Body.Dialog2_HTML %>
+
+</body>
+
+</html>
+

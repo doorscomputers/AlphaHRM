@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="Alpha Anywhere HTML Editor Version 12 Build 2446-4365">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title></title>
+</head>
+<body>
+
+<%a5
+
+file.append("c:\Alpha Debug\G28.txt",form1[0].#subform[0].Line7_EMail[0])
+file.append("c:\Alpha Debug\G28.txt",? form1[0].#subform[0].Line1a[0])
+'? form1[0].#subform[0].Line1b1_Explanation[0]
+'? form1[0].#subform[0].Line2a_NameofOrganization[0]
+'? form1[0].#subform[0].Line3_NameofAttorneyOrRep[0]
+'? form1[0].#subform[0].Line2_NameLawFirm[0]
+'? form1[0].#subform[0].Line3_LawStudent[0]
+'? form1[0].#subform[0].Line4_AttorneyBarNumber[0]
+
+%>
+
+
+</body></html>

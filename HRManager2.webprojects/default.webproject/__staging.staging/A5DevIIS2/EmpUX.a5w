@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<head>
+
+
+<%a5
+Delete tmpl_EmployeeUX
+DIM tmpl_EmployeeUX as P
+tmpl_EmployeeUX = a5w_load_component("EmployeeUX") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:EmployeeUX)
+
+'Override settings start -----------------------------------------
+tmpl_EmployeeUX.override_settings = <<%override_settings%
+	.alias = "EmployeeUX"
+_dialogFilename = "EmployeeUX"
+	_gridFilename = "EmployeeUX"
+%override_settings%
+
+
+a5w_resolveVariablesInOverrideSettings(tmpl_EmployeeUX,session,local_variables())
+ 
+'Override settings end -----------------------------------------
+
+delete x_EmployeeUX
+dim x_EmployeeUX as p
+x_EmployeeUX = a5w_run_Component(tmpl_EmployeeUX) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:EmployeeUX)
+
+?x_EmployeeUX.Output.Head.JavaScript
+?x_EmployeeUX.Output.Head.CSS_Link
+
+?x_EmployeeUX.Output.Head.Title 
+%>
+
+
+
+
+</head>
+
+
+<body class="iOS7Page">
+
+
+
+
+<%a5 ?x_EmployeeUX.Output.Body.Dialog2_HTML %>
+<%a5 ?a5dialogHelper_generateCORSHeaders() %>
+
+</body>
+
+</html>
+

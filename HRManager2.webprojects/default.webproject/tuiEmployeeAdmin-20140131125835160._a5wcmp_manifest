@@ -1,0 +1,28 @@
+css:<ProjectStyle>
+subComponent:EmployeeAccidentReportInjuryClassification.a5wcmp
+subComponent:EmployeeAccidentReportType.a5wcmp
+subComponent:EmployeeAccidentReportWorkRestricType.a5wcmp
+subComponent:EmployeeCategory.a5wcmp
+subComponent:EmployeeCheckListStatus.a5wcmp
+subComponent:EmployeeDeductionAmtType.a5wcmp
+subComponent:EmployeeEduCategory.a5wcmp
+subComponent:EmployeeJobStatus.a5wcmp
+subComponent:EmployeeMaritalStatus.a5wcmp
+subComponent:EmployeeSeparationType.a5wcmp
+subComponent:EmployeeType.a5wcmp
+subComponent:EmployeeDiscplineType.a5wcmp
+copyfile:{C:\Alpha Projects V12\HRM 2014\HRM2014.WebProjects\Default.WebProject\CSS\A5System\Images\wait.gif}
+copyfile:{C:\Alpha Projects V12\HRM 2014\HRM2014.WebProjects\Default.WebProject\css\A5System\Images\tabclose.png}
+copyfile:{C:\Alpha Projects V12\HRM 2014\HRM2014.WebProjects\Default.WebProject\css\A5System\Images\tabcloseHover.png}
+subComponent:EmployeeAccidentReportInjuryClassification
+subComponent:EmployeeAccidentReportType
+subComponent:EmployeeAccidentReportWorkRestricType
+subComponent:EmployeeCategory
+subComponent:EmployeeCheckListStatus
+subComponent:EmployeeDeductionAmtType
+subComponent:EmployeeEduCategory
+subComponent:EmployeeJobStatus
+subComponent:EmployeeMaritalStatus
+subComponent:EmployeeSeparationType
+subComponent:EmployeeType
+subComponent:EmployeeDiscplineType

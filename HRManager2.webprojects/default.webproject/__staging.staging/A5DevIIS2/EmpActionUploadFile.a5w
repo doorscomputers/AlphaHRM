@@ -1,0 +1,114 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="generator" content="Alpha Five HTML Editor Version 12">
+<title>Upload</title>
+ 
+
+<script>
+function InputFile(FileToUpload)
+{
+	var Fname = document.getElementById('UploadFile');
+	//alert('Filename: ' + Fname.value);
+
+	if (Fname != '') 
+	{
+		document.getElementById('Button1').style.display='none';
+		document.getElementById('waiting').style.display='';
+		//document.getElementById('Button2').style.display='';
+	}
+	else
+	{
+		document.getElementById('Button1').style.display='';
+		document.getElementById('Button2').style.display='none';
+	}
+
+	document.getElementById('SubmitFrm1').click();
+	//alert('Closing window...');
+	//parent.document.getElementById('A5dlg4.BUTTON.Done').click();
+
+}
+</script>
+
+<%a5
+'Parameter DocumentUploadID
+dim msg as c = ""
+if eval_valid("cmd")
+	NewFilename = api_uuidcreate()
+
+	dim fn as C
+	OriginalFilename = FileToUpload.filename
+
+	dim cn as sql::connection
+	cn.Open("::Name::SQL")
+	sqlstr = "select FilePath from si where id = 101"
+	cn.Execute(sqlstr)
+	FilePath = cn.ResultSet.data("FilePath")
+	cn.Close()
+	
+	if OriginalFilename <> ""
+
+		'Check if file exists.  If so, delete old file.
+		FileExt = file.filename_parse(OriginalFilename,"e")
+
+		DocumentRef = NewFilename + FileExt
+
+		dim cn as SQL::Connection
+		dim args as sql::Arguments
+		cn.Open("::Name::SQL")
+
+		args.Add("DocumentRef",DocumentRef)
+		args.Add("FileExt",FileExt)
+		args.Add("OriginalFilename",OriginalFilename)
+		args.Add("DocumentUploadID",DocumentUploadID)
+
+		sqlstr = "update EmpActionDocUpload set FileRef = :DocumentRef, FileExt = :FileExt, OriginalFilename = :OriginalFilename where ID = :DocumentUploadID"
+		cn.Execute(sqlstr,args)
+
+		sqlstr2 = replace_arguments_in_string(sqlstr,args)
+		file.from_string("c:\Alpha Debug\ActionUploadSqlStr.txt",sqlstr2)
+
+		cn.Close()
+
+		DocumentRef = FilePath + NewFilename + FileExt
+
+		file.from_blob(DocumentRef,FileToUpload.data)
+
+		? "<script type=\"text/javascript\">window.parent.closeParentA5Window('UPLOAD');</script>"
+
+	else
+		? "No file selected..."
+	end if
+end if
+%>
+
+</head>
+<body><strong>
+<form encType=multipart/form-data method=post action="
+<%a5
+? request.script_name + "?DocumentUploadID=" + DocumentUploadID
+%>
+">
+
+	<input type="hidden" name="MAX_FILE_SIZE" value="500" />
+	<div id="Button1" style="display:;font-family:Arial;font-size:11pt;">
+		Choose an image to upload to the server or click DONE to exit.<br>
+		<input id="UploadFile" style="WIDTH: 400px; HEIGHT:22px;" value="No file chosen..." size=27 type="file" name="FileToUpload" onchange="InputFile()"><br>
+	</div>
+
+
+	<div id="waiting" style="display:none;font-family:Arial;">
+		<table>
+			<tr>
+				<td valign="middle"><br><img src="images/working.gif"></td><td valign="middle"><br>Uploading image - please wait...</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="Button2" style="display:none;font-family:Arial;">
+		<input id="SubmitFrm1" value="Upload File" type=submit name="cmd">
+	</div>
+
+</body></html>

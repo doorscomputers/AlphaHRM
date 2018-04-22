@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<script src="ckeditor/ckeditor.js"></script>
+<head>
+
+
+<%a5
+Delete tmpl_DocEditor
+DIM tmpl_DocEditor as P
+tmpl_DocEditor = a5w_load_component("DocEditor") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:DocEditor)
+
+'Override settings start -----------------------------------------
+tmpl_DocEditor.override_settings = <<%override_settings%
+	.alias = "DocEditor"
+_dialogFilename = "DocEditor"
+	_gridFilename = "DocEditor"
+%override_settings%
+
+
+a5w_resolveVariablesInOverrideSettings(tmpl_DocEditor,session,local_variables())
+ 
+'Override settings end -----------------------------------------
+
+delete x_DocEditor
+dim x_DocEditor as p
+x_DocEditor = a5w_run_Component(tmpl_DocEditor) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:DocEditor)
+
+?x_DocEditor.Output.Head.JavaScript
+?x_DocEditor.Output.Head.CSS_Link
+
+?x_DocEditor.Output.Head.Title 
+%>
+
+
+
+
+</head>
+
+
+<body class="NDDIBluePage">
+
+
+
+
+<%a5 ?x_DocEditor.Output.Body.Dialog2_HTML %>
+
+</body>
+
+</html>
+
